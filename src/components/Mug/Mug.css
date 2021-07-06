@@ -1,0 +1,11 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.Mug{
+    color: aliceblue;
+    font-size: 2em;
+    position: relative;
+    left: 2px;
+    top: 15px;
+}

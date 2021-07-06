@@ -1,12 +1,13 @@
 import React from 'react'
 import './Brand.css'
+import Mug from '../Mug/Mug'
 
 
 function Brand() {
     return (
         <div className="Brand">
             <h1 className="BrandName">Latte Latte</h1> 
-            <i class="fas fa-mug-hot"></i>           
+            <Mug/>
         </div>
     )
 }
