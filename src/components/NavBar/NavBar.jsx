@@ -6,7 +6,7 @@ import Options from '../Options/Options';
 
 function NavBar() {
     return (
-        <div>
+        <div className="Nav" >
             <Brand/>
             <Options/>
         </div>
