@@ -1,6 +1,7 @@
 *{
     margin: 0px;
     padding: 0px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .Brand{
@@ -10,6 +11,7 @@
 }
 
 .BrandName{
+    font-family:  'Nunito', sans-serif;;
     color: aliceblue;
     height: 10vh;
     padding: 10px;
