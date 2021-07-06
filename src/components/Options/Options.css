@@ -1,0 +1,16 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.Navbar{
+    background-color: rgb(41, 44, 47);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.navOption{
+    
+    color: aliceblue;
+    height: 5vh;
+}

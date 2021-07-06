@@ -1,0 +1,16 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.Brand{
+    display: flex;
+    justify-content: flex-start;
+    background-color: rgb(41, 44, 47);
+}
+
+.BrandName{
+    color: aliceblue;
+    height: 10vh;
+    padding: 10px;
+}
