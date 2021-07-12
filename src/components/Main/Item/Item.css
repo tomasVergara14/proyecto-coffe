@@ -1,0 +1,23 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.item{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    color: blue;
+    padding: 2%;
+}
+.itemBox{
+    margin: 2%;
+    padding: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.category{
+    width: 100%;
+    color: black;
+}

@@ -1,0 +1,14 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.ItemList{
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: lightgray 2px solid;
+}
+.title{
+    display: flex;
+    padding: 2%;
+    width: 100%;
+}
