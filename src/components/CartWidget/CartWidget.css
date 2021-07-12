@@ -1,0 +1,21 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    
+}
+.cartWidget{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(41, 44, 47);
+    width: 30%;
+
+}   
+.cart{
+        color: aliceblue;
+        font-size: 1.2em;
+        position: relative;
+        left: 5px;
+        
+    }
+

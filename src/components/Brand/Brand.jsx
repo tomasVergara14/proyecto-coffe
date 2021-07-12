@@ -1,6 +1,7 @@
 import React from 'react'
 import './Brand.css'
 import Mug from '../Mug/Mug'
+import CartWidget from '../CartWidget/CartWidget';
 
 
 function Brand() {

@@ -1,14 +1,14 @@
 import React from 'react'
 import Brand from '../Brand/Brand';
-import Options from '../Options/Options';
-
+import CartWidget from '../CartWidget/CartWidget';
+import './NavBar.css'
 
 
 function NavBar() {
     return (
         <div className="Nav" >
             <Brand/>
-            <Options/>
+            <CartWidget/>
         </div>
     )
 }
