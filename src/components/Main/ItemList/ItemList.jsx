@@ -7,8 +7,7 @@ const ItemList = (props) => {
     return (
         <div className = "ItemList" >
             <h3 className="title" > {greeting} </h3>
-            <Item
-            category="Coffe"/>
+            <Item/>
             
         </div>
     )
