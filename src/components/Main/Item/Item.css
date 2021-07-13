@@ -78,8 +78,9 @@
         height: 50vh;
         z-index: -1;
     }
-    p{
+    .product{
         z-index: 2;
+        background-color: rgba(0, 0, 0, 0.5);
     }
 
 } 
