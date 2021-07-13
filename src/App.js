@@ -10,6 +10,8 @@ function App() {
       <NavBarBottom/>
       <ItemList
       greeting="Categorias"/>
+      <ItemList
+      greeting="Categorias"/>
     </div>
   );
 }

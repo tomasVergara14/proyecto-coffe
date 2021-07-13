@@ -45,8 +45,8 @@ const Item = () => {
                 const {id, category, url, img, alt}= link
                 return (
                     <div key={id} className="itemBox" >
-                        <img src={(img)} alt={alt} className="img" />
-                        <a href={url} className="category" >  {category} </a>
+                        
+                        <a href={url} className="category" > <img src={(img)} alt={alt} className="img" /> <p className="product" >{category} </p>  </a>
                     </div>
                 )
             } )}
