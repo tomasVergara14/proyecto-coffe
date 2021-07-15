@@ -32,7 +32,9 @@ const ItemCount = (props) => {
                     }>+</button>
                     
                 </div>
-                <button className="Add" type="submit" >Agregar al carrito</button>    
+                <button className="Add" type="button" onClick={
+                    ()=>{ alert(`Esta agregando: ${onAdd} productos`) }
+                } >Agregar al carrito</button>    
             </form>
             
             
