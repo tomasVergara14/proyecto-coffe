@@ -5,8 +5,8 @@ import './ItemCount.css'
 // const initial = 1
 const ItemCount = (props) => {
 
-    const {stockItem , initial } = props 
-    const [onAdd, setAdd] = useState(initial)
+    const {initial,stockItem} = props
+    const [onAdd, setAdd] = useState(Number(initial))  
     
 
     return (
@@ -15,18 +15,21 @@ const ItemCount = (props) => {
             
             <form className="itemCount" action="">
                 <div className="countButtons">
+                
                     <button className="Button" type="button" onClick={
-                        ()=>{if(onAdd < props.stockItem){
-                            setAdd(1 + onAdd )
-                        }} 
-                    }>+</button>
-                    <p>{onAdd}</p>
-                    <button className="Button" type="button" onClick={
-                        ()=>{if( onAdd > props.initial ){
+                        ()=>{if( onAdd > initial ){
                             setAdd(onAdd - 1)
                         }} 
                     }> - </button>
-                    
+                    <p>{onAdd}</p>
+                    <button className="Button" type="button" onClick={
+                        ()=>{if(!stockItem){
+                            setAdd("0")
+                        }else if(onAdd < stockItem  ){
+                            setAdd(onAdd +1)
+                        }
+                    return onAdd} 
+                    }>+</button>
                     
                 </div>
                 <button className="Add" type="submit" >Agregar al carrito</button>    

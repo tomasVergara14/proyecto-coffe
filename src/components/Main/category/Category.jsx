@@ -1,5 +1,5 @@
 import React from 'react'
-import './Item.css'
+import './Category.css'
 import moka from '../../../assets/moka-pot-1209090_1920.jpg'
 import press from '../../../assets/kettle-2220369_1920.jpg'
 import coffe from '../../../assets/coffee-2698126_1920.jpg'
@@ -37,7 +37,7 @@ const data = [
     }
 ]
 
-const Item = () => {
+const Category = () => {
     
     return (
         <div className="item">
@@ -54,4 +54,4 @@ const Item = () => {
     )
 }
 
-export default Item
+export default Category
