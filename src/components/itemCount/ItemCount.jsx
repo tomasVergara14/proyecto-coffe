@@ -3,9 +3,8 @@ import './ItemCount.css'
 
 // const stockItem = 10
 // const initial = 1
-const ItemCount = (props) => {
+const ItemCount = ({initial,stockItem}) => {
 
-    const {initial,stockItem} = props
     const [onAdd, setAdd] = useState(Number(initial))  
 
     const add = ()=>{if(!stockItem){
