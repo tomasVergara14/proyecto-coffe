@@ -1,0 +1,32 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.itemCount{
+    display: inline-block;
+    padding: 5px;
+}
+.countButtons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5%;
+    color: rgb(120, 153, 187);
+}
+.Button{
+    margin: 5%;
+    width: 4vh;
+    height: 4vh;
+    color: aliceblue;
+    background-color: rgb(120, 153, 187);
+    border: 1px solid rgb(120, 153, 187);
+    border-radius: 3px;
+}
+.Add{
+    margin: 2%;
+    padding: 2px;
+    color: aliceblue;
+    background-color: rgb(120, 153, 187);
+    border: 1px solid rgb(120, 153, 187);
+    border-radius: 3px;
+}
