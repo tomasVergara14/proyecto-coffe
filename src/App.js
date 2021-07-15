@@ -1,14 +1,12 @@
 import './App.css';
-import NavBar from './components/NavBarTop/NavBar';
-import NavBarBottom from './components/NavBarBottom/NavBarBottom';
+import NavBarTotal from './components/NavBarTotal/NavBarTotal';
 import ItemList from './components/Main/ItemList/ItemListContainer';
 import ItemCount from './components/itemCount/ItemCount';
 
 function App() {
   return (
     <div className="App">
-      <NavBar/>
-      <NavBarBottom/>
+      <NavBarTotal/>
       <ItemList
       greeting="Categorias"/>
       <ItemCount initial= "1" stockItem="5" />

@@ -3,7 +3,7 @@ import Options from '../Options/Options'
 
 const NavBarBottom = () => {
     return (
-        <div>
+        <div className="Options">
             <Options/>
         </div>
     )
