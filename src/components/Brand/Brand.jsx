@@ -7,7 +7,7 @@ import CartWidget from '../CartWidget/CartWidget';
 function Brand() {
     return (
         <div className="Brand">
-            <h1 className="BrandName">Latte Latte</h1> 
+            <a href="/" ><h1 className="BrandName" > Latte Latte</h1>  </a> 
             <Mug/>
         </div>
     )

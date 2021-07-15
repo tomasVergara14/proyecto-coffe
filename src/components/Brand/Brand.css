@@ -3,10 +3,15 @@
     padding: 0px;
     font-family: 'Roboto', sans-serif;
 }
+a{
+    
+    text-decoration: none;
+}
 
 .Brand{
     display: flex;
     justify-content: flex-start;
+    align-items: flex-start;
     background-color: rgb(41, 44, 47);
     width: 70%;
 }
@@ -23,5 +28,5 @@
     font-size: 2em;
     position: relative;
     left: 2px;
-    top: 15px;
+    top: 1px;
 }
