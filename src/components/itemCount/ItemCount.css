@@ -14,9 +14,14 @@
     color: rgb(120, 153, 187);
 }
 .Button{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     margin: 5%;
+    padding: 0%;
     width: 4vh;
     height: 4vh;
+    font-size: 1.1em;
     color: aliceblue;
     background-color: rgb(120, 153, 187);
     border: 1px solid rgb(120, 153, 187);
