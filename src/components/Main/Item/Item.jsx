@@ -37,20 +37,28 @@ const handlerPromise = async ()=>{
 }
 
 const Item = () => {
+    const [itemValue, setItemValue] = useState([])
     useEffect(()=>{
-        handlerPromise
+        setTimeout(()=>{
+            setItemValue(CoffeData)
+        },2000)
     },[])
     return (
+        
+        
         <div className="item">
-            {CoffeData.map((link)=>{
+            {itemValue.map((link)=>{
                 const {id, name, place, img, description, url}= link
                 return (
                     <div key={id} className="itemBox" >
+
                         
-                        <a href={url} className="category" > <img src={(img)}  className="img" /> <li> {name} {place} {description} </li>  </a>
+                        <a href={url} className="category" > <img src={(img)}  className="img" /> <h3>Granos de cafe</h3><li> {name} {place} {description} </li>  </a>
                     </div>
                 )
-            } )}
+                
+            })}
+            {console.log(itemValue)}
         </div>
     )
 }
