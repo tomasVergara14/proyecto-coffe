@@ -1,16 +1,20 @@
 import React from 'react'
-import './ItemList.css'
+import './ItemListContainer.css'
 import Category from '../category/Category'
+import ItemList from '../ItemList/ItemList'
 
-const ItemList = (props) => {
+
+
+
+const ItemListContainer = (props) => {
     const {greeting} = props
     return (
         <div className = "ItemList" >
             <h3 className="title" > {greeting} </h3>
             <Category/>
-            
+            <ItemList/>
         </div>
     )
 }
 
-export default ItemList
+export default ItemListContainer
