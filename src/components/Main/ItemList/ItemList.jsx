@@ -2,26 +2,6 @@ import React, {useState, useEffect} from 'react'
 import  Item  from '../Item/Item'
 import Coffe from '../../../data/Coffe'
 
-// const [itemValue, setItemValue] = useState([])
-//     useEffect(()=>{
-//         setTimeout(()=>{
-//             setItemValue(CoffeData)
-//         },2000)
-//     },[])
-
-
-//     {itemValue.map((link)=>{
-//         const {id, name, place, img, description, url}= link
-//         return (
-//             <div key={id} className="itemBox" >
-
-                
-//                 <a href={url} className="category" > <img src={(img)}  className="img" /> <h3>Granos de cafe</h3><li> {name} {place} {description} </li>  </a>
-//             </div>
-//         )
-        
-//     })}
-//     {console.log(itemValue)}
 
 const ItemList = () => {
     
