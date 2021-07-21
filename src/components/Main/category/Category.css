@@ -67,6 +67,9 @@ h3{
         padding: 0px;
         margin: 0px;
     }
+    a.category{
+        height: 51vh;
+    }
     h3{
         margin: 0%;
     }

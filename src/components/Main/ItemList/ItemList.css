@@ -1,0 +1,13 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.itemDetail{
+    padding: 2%;
+}
+.containerItem{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+}
