@@ -7,6 +7,7 @@ const Coffe = [
     {
         "id": 1,
         "name":"Huila",
+        "gr":"250 gr",
         "place":"Colombia",
         "price":200,
         "origen":"GARZÓN, HUILA, COLOMBIA",
@@ -17,6 +18,7 @@ const Coffe = [
     {
         "id": 2,
         "name":"Robusta",
+        "gr":"250 gr",
         "place":"Centro America",
         "price":200,
         "origen":"GARZÓN, HUILA, COLOMBIA",
@@ -27,6 +29,7 @@ const Coffe = [
     {
         "id": 3,
         "name":"Cerrado mineiro",
+        "gr":"250 gr",
         "place": "Brasil",
         "price":200,
         "origen":"CERRADO MINEIRO, MINAS GERAIS",
