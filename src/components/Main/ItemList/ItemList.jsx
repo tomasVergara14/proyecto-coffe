@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import  Item  from '../Item/Item'
 import Coffe from '../../../data/Coffe'
+import './ItemList.css'
 
 
 const ItemList = () => {
@@ -22,16 +23,19 @@ const ItemList = () => {
 
 
     return (
-        <div className="containerItem" >
+        <div className="containerItemBox" >
             <h3>Product</h3>
-            {item.map((link, index)=>{
-                const {id, name, place,price , img, description}= link
-                return(
-                    <Item key={index}
-                    img={img} name={name} price={price} description={description} />
-                )   
-                })}
-             
+            <div className="containerItem">
+                {item.map((link, index)=>{
+                    const {id, name, place,price , img, description}= link
+                    return(
+                        <Item key={index}
+                        img={img} name={name} price={price} description={description} />
+                    )   
+                    })}
+                
+            
+            </div>
              
         </div>
     )

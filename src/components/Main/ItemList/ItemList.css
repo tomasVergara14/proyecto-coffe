@@ -2,12 +2,17 @@
     margin: 0px;
     padding: 0px;
 }
-.itemDetail{
+.containerItemBox{
+    margin: 0px;
     padding: 2%;
-}
-.containerItem{
-    width: 20%;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+}
+.containerItem{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
     padding: 2%;
 }
