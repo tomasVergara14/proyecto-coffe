@@ -4,19 +4,25 @@
 }
 .itemDetail{
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 2%;
-}
-.ItemImgContainer{
-    display: flex;
-    flex-wrap: wrap;
-    width: 70%;
     padding: 2%;
 }
 .ItemImg{
         width: 100%;
         height: 50vh;
+}
+.ItemText{
+    visibility: visible;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    bottom: 40px;
+    color:rgb(230, 236, 241);
+    background-color: rgba(0,0,0,0.4);
 }
 
 

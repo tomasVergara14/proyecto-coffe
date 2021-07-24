@@ -23,6 +23,7 @@ const ItemList = () => {
 
     return (
         <div className="containerItem" >
+            <h3>Product</h3>
             {item.map((link, index)=>{
                 const {id, name, place,price , img, description}= link
                 return(

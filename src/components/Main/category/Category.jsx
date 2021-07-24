@@ -41,8 +41,8 @@ const Category = () => {
     
     return (
         <div className="item">
-            {data.map((link)=>{
-                const {id, category, url, img, alt}= link
+            {data.map((categories)=>{
+                const {id, category, url, img, alt}= categories
                 return (
                     <div key={id} className="itemBox" >
                         

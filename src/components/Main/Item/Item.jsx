@@ -8,15 +8,13 @@ const Item = (props) => {
     const {name, price, description, img}= props
     return (
          
-        <div className="itemDetail">           
-            <div className="ItemImgContainer">
-                <img className="ItemImg" src={img} alt="" />
+        <div className="itemDetail">         
+            <img className="ItemImg" src={img} alt="" />
+            <div className="ItemText">
+                <p>Nombre: {name} </p>
+                <p>Precio: {price} </p>
             </div>
-            <div className="itemText">
-                <h3>Nombre:{name} </h3>
-                <h3>Precio:{price} </h3>
-                <h3>Description:{description} </h3>
-            </div>
+            
         </div>
     )
 }
