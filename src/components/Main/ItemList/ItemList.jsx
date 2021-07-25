@@ -9,7 +9,6 @@ const ItemList = () => {
     const [item, setItem] = useState([])
     const CoffeData = Coffe
     
-    console.table(item)
     function handlerPromise(){
         setTimeout(()=>{
             Promise.resolve(CoffeData)
