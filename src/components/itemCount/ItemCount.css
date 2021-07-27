@@ -31,6 +31,9 @@
     background-color: aliceblue;
     color: rgb(41, 44, 47);
 }
+.countButtons p{
+    color: rgb(230, 236, 241);
+}
 .Add{
     margin: 2%;
     padding: 2px;
