@@ -28,11 +28,12 @@
 @media (min-width: 600px){
     .Container{
         display: flex;
+        justify-content: space-around;
     }
     .itemDetail{
-        width: 100%;
+        width: 80%;
         display: flex;
-        margin: 0px;
+        margin: 2px;
         transition: transform 500ms ease;
     }
     .itemDetail:hover{
