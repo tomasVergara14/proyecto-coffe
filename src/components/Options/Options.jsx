@@ -1,13 +1,14 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 import  './Options.css'
 
 function Options() {
     return (
         <div className="Navbar">
-            <a href="/Nosotros" className="navOption">Nosotros</a>
-            <a href="/Origenes" className="navOption">Origenes</a>
-            <a href="/Equipamiento" className="navOption">Equipamiento</a>
-            <a href="/Tienda" className="navOption">Tienda</a>
+            <NavLink to="/" className="navOption">Nosotros</NavLink>
+            <NavLink to="/" className="navOption">Origenes</NavLink>
+            <NavLink to="/" className="navOption">Equipamiento</NavLink>
+            <NavLink to="/" className="navOption">Tienda</NavLink>
         </div>
     )
 }

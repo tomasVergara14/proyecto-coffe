@@ -5,7 +5,7 @@ const arabica = Arabica
 
 const Coffe = [
     {
-        "id": 1,
+        "id": "1",
         "name":"Huila",
         "gr":"250 gr",
         "place":"Colombia",
@@ -16,7 +16,7 @@ const Coffe = [
         "img": arabica
     },
     {
-        "id": 2,
+        "id": "2",
         "name":"Robusta",
         "gr":"250 gr",
         "place":"Centro America",
@@ -27,7 +27,7 @@ const Coffe = [
         "img": arabica
     },
     {
-        "id": 3,
+        "id": "3",
         "name":"Cerrado mineiro",
         "gr":"250 gr",
         "place": "Brasil",
