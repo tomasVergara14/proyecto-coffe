@@ -2,7 +2,6 @@ import React from 'react'
 import './Brand.css'
 import { NavLink } from 'react-router-dom';
 import Mug from '../Mug/Mug'
-import CartWidget from '../CartWidget/CartWidget';
 
 
 function Brand() {

@@ -1,7 +1,6 @@
 import React from 'react'
 import './ItemListContainer.css'
 import Category from '../category/Category'
-import ItemList from '../ItemList/ItemList'
 
 
 
