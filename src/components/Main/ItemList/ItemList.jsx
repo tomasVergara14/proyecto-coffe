@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { useParams } from 'react-router-dom'
 import  Item  from '../Item/Item'
 import Coffe from '../../../data/Coffe'
 import './ItemList.css'
@@ -8,6 +9,7 @@ const ItemList = () => {
     
     const [item, setItem] = useState([])
     const CoffeData = Coffe
+    const {} = useParams()
     
     function handlerPromise(){
         setTimeout(()=>{
@@ -23,7 +25,7 @@ const ItemList = () => {
 
     return (
         <div className="containerItemBox" >
-            <h3>Product</h3>
+            <h3>Productos</h3>
             <div className="containerItem">
                 {item.map((link, index)=>{
                     const {id, name, place,price , img, description}= link

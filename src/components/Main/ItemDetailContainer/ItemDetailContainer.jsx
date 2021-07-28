@@ -7,25 +7,25 @@ const ItemDetailContainer = () => {
     
     const CoffeData = Coffe
     const [item, setItem]=useState([])
-    const {id} = useParams()
+    const {itemId} = useParams()
 
     
     useEffect(()=>{
             setTimeout(()=>{
                 Promise.resolve(CoffeData)
                 .then(res =>{
-                    if(id === undefined){
+                    if(itemId === undefined){
                         setItem(res)
                     }
                     else{
-                        setItem(res.filter(it=> it.id === id))
+                        setItem(res.filter(it=> it.id === itemId))
                     }
                 } ) 
             }, 2000)
         
-    },[id])
+    },[itemId])
 
-    console.log(id)
+    console.log(itemId)
 
     return (
         <div>

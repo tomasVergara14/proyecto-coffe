@@ -23,7 +23,6 @@ function App() {
             greeting="Categorias"/>
           </Route>
           <Route exact path="/detail/:itemId">
-            
             <ItemDetailContainer/>
           </Route> 
           
