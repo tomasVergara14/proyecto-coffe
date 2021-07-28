@@ -7,18 +7,22 @@ const ItemDetailContainer = () => {
     
     const CoffeData = Coffe
     const [item, setItem]=useState([])
+    const [loading, setLoading] = useState(true)
     const {itemId} = useParams()
 
     
     useEffect(()=>{
+            setLoading(true)
             setTimeout(()=>{
                 Promise.resolve(CoffeData)
                 .then(res =>{
                     if(itemId === undefined){
                         setItem(res)
+                        setLoading(false)
                     }
                     else{
                         setItem(res.filter(it=> it.id === itemId))
+                        setLoading(false)
                     }
                 } ) 
             }, 2000)
@@ -29,6 +33,7 @@ const ItemDetailContainer = () => {
 
     return (
         <div>
+            {loading && "cargando..."}
             {item.map((item, index)=>{
                 const {id,name,gr,place,price,origin,height,description,img} = item
                     return(

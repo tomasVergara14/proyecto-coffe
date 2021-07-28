@@ -9,8 +9,9 @@ import categoriesData from '../../../data/Categories'
 const Category = () => {
     
     const [category, setCategory]=useState([])
-    const data = categoriesData
     const {id} = useParams()
+    const data = categoriesData
+    
     
     useEffect(()=>{
         setTimeout(()=>{
