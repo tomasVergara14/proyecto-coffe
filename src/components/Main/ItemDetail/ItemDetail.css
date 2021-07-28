@@ -5,9 +5,7 @@
 .DetailBox{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
-    margin: 0px;
-    padding: 2%;
+    justify-content: center;
 }
 .ImgBox{
     width: 60vh;
@@ -15,7 +13,7 @@
 }
 .DetailText{
     display: flex;
-    width: 80%;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
     color:rgb(230, 236, 241);
