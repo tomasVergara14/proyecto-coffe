@@ -12,7 +12,6 @@ const ItemListContainer = (props) => {
         <div className = "ItemList" >
             <h3 className="title" > {greeting} </h3>
             <Category/>
-            <ItemList/>
         </div>
     )
 }
