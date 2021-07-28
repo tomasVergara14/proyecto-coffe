@@ -7,8 +7,6 @@ const Item = (props) => {
     
     const {name, price, description, img}= props
     return (
-         
-        
             <div className="itemDetail">         
                 <img className="ItemImg" src={img} alt="" />
                 <div className="ItemText">

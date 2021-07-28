@@ -32,12 +32,12 @@ const ItemList = () => {
     return (
         <div className="containerItemBox" >
             <h3>Productos</h3>
-            <div className="containerItem">
+            <div >
                
                 {item.map((link, index)=>{
                     const {id, name, place,price , img, description}= link
                     return(
-                        <NavLink className="containerItem" to={`/detail/${id}`}>
+                        <NavLink className="containerItem" to={`/item/${id}`}>
                             <Item key={index}
                             img={img} name={name} price={price} description={description} />
                         </NavLink>

@@ -3,16 +3,17 @@
     padding: 0px;
 }
 .containerItemBox{
+    width: 100%;
     margin: 0px;
     padding: 2%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+}
+h3{
+    width: 100%;
 }
 .containerItem{
     width: 100%;
+    margin: 0px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    padding: 2%;
 }
