@@ -29,7 +29,7 @@ const ItemDetailContainer = () => {
                    
                 }
             } ) 
-        }, 2000)
+        }, 1000)
     
     },[itemId])
 
