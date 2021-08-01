@@ -4,6 +4,7 @@ import NavBarTotal from './components/NavBarTotal/NavBarTotal';
 import ItemListContainer from './components/Main/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/Main/ItemDetailContainer/ItemDetailContainer';
 import ItemList from './components/Main/ItemList/ItemList';
+import CoffeItems from './components/Main/CoffeItems/CoffeItems';
 import Cart from './components/Cart/Cart';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/" >
             <ItemListContainer
             greeting="Categorias"/>
+            <CoffeItems/>
             
           </Route>
           <Route exact path="/category/:categoryId" >
