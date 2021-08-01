@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
 import  Item  from '../Item/Item'
-import Coffe from '../../../data/Coffe'
+import DefineCategory from '../../../handlers/DefineCategory'
 import './ItemList.css'
 
 
@@ -10,27 +10,35 @@ const ItemList = () => {
     
     const [item, setItem] = useState([])
     const [loading, setLoading] = useState(true)
-    const CoffeData = Coffe
+    const {categoryId}=useParams()
     const {itemId} = useParams()
+
+    const data = DefineCategory(categoryId)
     
-    
+    //Category y lista de productos de ese category
     useEffect(()=>{
         setLoading(true)
         setTimeout(()=>{
-            Promise.resolve(CoffeData)
+            Promise.resolve(data)
+            
             .then(res =>{
                 if(itemId === undefined){
-                    setItem(res)
                     setLoading(false)
+                    setItem(DefineCategory(categoryId))
+                    
+                    
                 }
                 else{
-                    setItem(res.filter(it=> it.id === itemId))
                     setLoading(false)
+                    setItem(res.filter(it=> it.id === itemId))
+                   
+                   
                 }
             } ) 
         }, 2000)
     
     },[itemId])
+    console.log(item)
 
 
     return (

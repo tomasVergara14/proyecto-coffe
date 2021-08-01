@@ -4,12 +4,10 @@ import './Category.css'
 import { NavLink } from 'react-router-dom'
 import categoriesData from '../../../data/Categories'
 
-
-
 const Category = () => {
     
     const [category, setCategory]=useState([])
-    const {id} = useParams()
+    const {categoryId} = useParams()
     const data = categoriesData
     
     
@@ -17,16 +15,16 @@ const Category = () => {
         setTimeout(()=>{
             Promise.resolve(data)
             .then(res =>{
-                if(id === undefined){
+                if(categoryId === undefined){
                     setCategory(res)
                 }
                 else{
-                    setCategory(res.filter(it=> it.id === id))
+                    setCategory(res.filter(it=> it.id === categoryId))
                 }
             } ) 
         }, 0)
     
-},[id])
+},[categoryId])
     
     return (
         <div className="item">
