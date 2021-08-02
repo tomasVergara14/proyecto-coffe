@@ -34,18 +34,22 @@ const ItemCount = ({initial,stockItem}) => {
         <div >
             
             <form className="itemCount" action="">
-                <div className="countButtons">
                 
-                    <button className="Button" type="button" onClick={rest}> - </button>
-                    <p>{onAdd}</p>
-                    <button className="Button" type="button" onClick={add}>+</button>
-                    
-                </div>
                 
                 {(()=>{
                     if(shop === shopState){
                         return(
+                            <>
+                            <div className="countButtons">
+                            
+                            <button className="Button" type="button" onClick={rest}> - </button>
+                            <p>{onAdd}</p>
+                            <button className="Button" type="button" onClick={add}>+</button>
+                                
+                            </div>
                             <button className="Add" type="button" onClick={cart} > {shop} </button>
+                            </>
+                            
                         )
                     }
                     return(
