@@ -34,6 +34,19 @@ const ItemCount = ({initial,stockItem}) => {
         }
      }
 
+
+     const ButtonAdd = ( cart, shop)=>{
+        return(
+            <button className="Add" type="button" onClick={cart} > {shop} </button>
+        )
+    }
+        
+    const ButtonEnd = ( cart, shop)=>{
+        return(
+            <NavLink to="/cart" ><button className="Add" type="button" > {shop} </button></NavLink>
+        )
+    }
+
     return (
         
         <div >
@@ -46,7 +59,17 @@ const ItemCount = ({initial,stockItem}) => {
                     <button className="Button" type="button" onClick={add}>+</button>
                     
                 </div>
-                <button className="Add" type="button" onClick={cart} > {shop} </button>    
+                
+                {(()=>{
+                    if(shop === shopState){
+                        return(
+                            <button className="Add" type="button" onClick={cart} > {shop} </button>
+                        )
+                    }
+                    return(
+                        <NavLink to="/cart" ><button className="Add" type="button" > {shop} </button></NavLink>
+                    )
+                })() }
             </form>
             
             
