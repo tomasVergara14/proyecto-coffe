@@ -54,8 +54,8 @@ const ItemCount = ({initial,stockItem}) => {
                     }
                     return(
                         <>
-                        <p>Tienes: {onAdd} productos</p>
                         <NavLink to="/cart" ><button className="Add" type="button" > {shop} </button></NavLink>
+                        <p>Tienes: {onAdd} productos</p>
                         </>
                         
                     )
