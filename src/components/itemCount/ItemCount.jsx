@@ -25,12 +25,7 @@ const ItemCount = ({initial,stockItem}) => {
     const cart = (event)=>{ 
         if (onAdd){
             setShop("Terminar Compra")
-            return(
-                <div>
-                    <NavLink to="/cart" ><button className="Add" type="button" onClick={cart} > {shop} </button></NavLink>
-                </div>
-                
-            ) 
+           
         }
      }
 
