@@ -1,12 +1,15 @@
 import React, { useState} from 'react'
+import { NavLink } from 'react-router-dom'
 import './ItemCount.css'
 
 // const stockItem = 10
 // const initial = 1
 const ItemCount = ({initial,stockItem}) => {
+    const shopState = "Agregar al carrito"
 
-    const [onAdd, setAdd] = useState(Number(initial))  
-
+    const [onAdd, setAdd] = useState(Number(initial))
+    const [shop, setShop] = useState(shopState)
+    
     const add = ()=>{if(!stockItem){
             setAdd("0")
         }else if(onAdd < stockItem  ){
@@ -19,10 +22,17 @@ const ItemCount = ({initial,stockItem}) => {
         }
     }
 
-    const cart = ()=>{ alert(`Esta agregando: ${onAdd} productos`) }
-
-    
-    
+    const cart = (event)=>{ 
+        if (onAdd){
+            setShop("Finalizar Compra")
+            return(
+                <div>
+                    <NavLink to="/cart" ><button className="Add" type="button" onClick={cart} > {shop} </button></NavLink>
+                </div>
+                
+            ) 
+        }
+     }
 
     return (
         
@@ -36,7 +46,7 @@ const ItemCount = ({initial,stockItem}) => {
                     <button className="Button" type="button" onClick={add}>+</button>
                     
                 </div>
-                <button className="Add" type="button" onClick={cart} >Agregar al carrito</button>    
+                <button className="Add" type="button" onClick={cart} > {shop} </button>    
             </form>
             
             

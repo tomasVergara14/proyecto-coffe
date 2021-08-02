@@ -20,7 +20,6 @@ const CoffeItems = () => {
                 }
              ) 
         }, 0)
-        console.log(item)
     
     },[])
 

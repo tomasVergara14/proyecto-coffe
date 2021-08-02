@@ -32,7 +32,7 @@ const Category = () => {
                 const {id, category, url, img, alt}= categories
                 return (
                     <div key={id} className="itemBox" > 
-                        <NavLink to={`${url}${categories.id}`} className="category" > <img src={(img)} alt={alt} className="img" /> <p className="product" >{category} </p>  </NavLink>
+                        <NavLink to={`${url}${categories.id}`} className="category" key={id}> <img src={(img)} alt={alt} className="img" /> <p className="product" >{category} </p>  </NavLink>
                     </div>
                 )
             } )}
