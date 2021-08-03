@@ -3,6 +3,9 @@
     padding: 0px;
 }
 .containerItemBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
     margin: 0px;
     padding: 2%;
@@ -18,15 +21,43 @@ h3{
     justify-content: space-around;
     flex-wrap: wrap;
 }
+.spinner{
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    top: 100px;
+  }
+.spinner:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: rgba(1, 1, 1, 0.1) transparent rgba(1, 1, 1, 0.1) transparent;
+    animation: spinner 1.2s linear infinite;
+  }
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+      }
+    100% {
+        transform: rotate(360deg);
+      }
+}
 
 @media (min-width: 600px){
     .containerItemBox{
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
     }
     .container{
         width: 100%;
         display: flex;
+        justify-content: center;
     }
     .containerItem{
         margin: 0px;

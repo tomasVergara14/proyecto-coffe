@@ -37,7 +37,7 @@ const ItemDetailContainer = () => {
 
     return (
         <div>
-            {loading && "cargando..."}
+            {loading && <div className="spinner"></div>}
             {item.map((item, index)=>{
                 const {id,name,gr,place,price,origin,height,description,img} = item
                     return(

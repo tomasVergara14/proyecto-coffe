@@ -35,7 +35,7 @@ const ItemList = () => {
                    
                 }
             } ) 
-        }, 1000)
+        }, 5000)
     
     },[itemId])
     console.log(item)
@@ -45,7 +45,7 @@ const ItemList = () => {
         <div className="containerItemBox" >
             <h3>Productos</h3>
             <div className="container">
-                {loading && "cargando..."}
+                {loading && <div className="spinner"></div>}
                 {item.map((link, index)=>{
                     const {id, name, place,price , img, description}= link
                     return(
