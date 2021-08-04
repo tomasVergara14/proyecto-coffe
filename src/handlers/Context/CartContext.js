@@ -1,19 +1,19 @@
 import React, {createContext, useContext, useState} from 'react'
 
 export const CartContext = createContext()
-console.log(CartContext)
+
 
 export const useCartContext = ()=>useContext(CartContext)
 
 const CartContextProvider = ({children})=>{
 
     
-    const [Cart, setCart]=useState("hola")
+    const [cart, setCart]=useState([])
 
     return(
         <CartContext.Provider
         value={{ 
-            Cart,
+            cart,
             setCart
         }}>
             {children}

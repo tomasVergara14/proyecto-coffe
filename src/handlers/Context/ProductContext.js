@@ -1,13 +1,13 @@
 import React, {createContext, useContext, useState} from 'react'
 
 export const ProductContext = createContext()
-console.log(ProductContext)
+
 
 export const useProductContext = ()=>useContext(ProductContext)
 
 const ProductContextProvider = ({children})=>{
 
-    const [ product, setProduct]= useState("hola")
+    const [ product, setProduct]= useState()
 
     return(
         <ProductContext.Provider

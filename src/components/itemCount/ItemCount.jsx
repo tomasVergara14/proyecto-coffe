@@ -3,11 +3,14 @@ import { NavLink } from 'react-router-dom'
 import './ItemCount.css'
 import { useCartContext } from '../../handlers/Context/CartContext'
 import { useQuantityContext } from '../../handlers/Context/QuantityContext'
+import { useProductContext } from '../../handlers/Context/ProductContext'
 
 const ItemCount = ({initial,stockItem}) => {
     const shopState = "Agregar al carrito"
 
     const {quantity, setQuantity} = useQuantityContext()
+    const {Cart, setCart} = useCartContext()
+    const { product, setProduct} = useProductContext()
 
     const [onAdd, setAdd] = useState(Number(initial))
     const [shop, setShop] = useState(shopState)
@@ -27,6 +30,7 @@ const ItemCount = ({initial,stockItem}) => {
     const cart = (event)=>{ 
         if (onAdd){
             setShop("Terminar Compra")
+            setQuantity(onAdd)
            
         }
      }
@@ -50,7 +54,7 @@ const ItemCount = ({initial,stockItem}) => {
                                 
                             </div>
                             <button className="Add" type="button" onClick={cart} > {shop} </button>
-                            {setQuantity(onAdd)}
+                            
                             </>
                             
                         )

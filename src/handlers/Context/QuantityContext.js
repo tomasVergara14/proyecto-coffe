@@ -1,7 +1,6 @@
 import React, {createContext, useContext, useState} from 'react'
 
 export const QuantityContext = createContext()
-console.log(QuantityContext)
 
 export const useQuantityContext = ()=>useContext(QuantityContext)
 
