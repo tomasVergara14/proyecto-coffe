@@ -2,13 +2,12 @@ import React, { useState} from 'react'
 import { NavLink } from 'react-router-dom'
 import './ItemCount.css'
 import { useCartContext } from '../../handlers/Context/CartContext'
-// const stockItem = 10
-// const initial = 1
+import { useQuantityContext } from '../../handlers/Context/QuantityContext'
+
 const ItemCount = ({initial,stockItem}) => {
     const shopState = "Agregar al carrito"
 
-    const {quantity, setQuantity} = useCartContext()
-    console.log(quantity)
+    const {quantity, setQuantity} = useQuantityContext()
 
     const [onAdd, setAdd] = useState(Number(initial))
     const [shop, setShop] = useState(shopState)
