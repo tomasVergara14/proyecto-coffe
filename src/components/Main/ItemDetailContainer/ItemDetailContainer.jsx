@@ -3,10 +3,14 @@ import { useParams } from 'react-router-dom'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import DefineItemDetail from '../../../handlers/DefineItemDetail'
 import { useProductContext } from '../../../handlers/Context/ProductContext'
+import { useCartContext } from '../../../handlers/Context/CartContext'
+import { useQuantityContext } from '../../../handlers/Context/QuantityContext'
 
 const ItemDetailContainer = () => {
     
     const {product, setProduct} = useProductContext()
+    const {cart, setCart} = useCartContext()
+    const {quantity, setQuantity} = useQuantityContext()
     
     const [item, setItem]=useState([])
     const [loading, setLoading] = useState(true)
@@ -28,7 +32,11 @@ const ItemDetailContainer = () => {
                 else{
                     setLoading(false)
                     setItem(res.filter(it=> it.id === itemId))
-                   
+                    setCart({
+                        ...cart,
+                        product,
+                        quantity
+                    })
                 }
             } ) 
         }, 1000)

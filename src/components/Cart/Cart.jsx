@@ -19,24 +19,26 @@ const Cart = () => {
     console.log(product)
     console.log(quantity)
 
-    function AddItem(){
-        if(product !== undefined){
-            cartArray.push(product)
-            setCart({
-                ...cartArray,
-                product,
-                quantity
-            })
-        }
-    }
     console.log(cart)
     useEffect(()=>{
+        setCartState(cart)
     },[ProductDetailContext])
 
+
+    //Ver por que no funciona
     return (
         <div>
             <h3>Cart</h3>
-            <p> {cartState} </p>
+            {()=>{
+                if(cart){
+                    return(
+                        <>
+                        <p>{quantity}</p>
+                        <p>{cart.quantity}</p>
+                        </>
+                    )
+                }
+            }}
         </div>
     )
 }
