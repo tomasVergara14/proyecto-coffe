@@ -16,6 +16,7 @@ const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true)
     const {itemId} = useParams()
 
+
     const data = DefineItemDetail(itemId)
 
     
@@ -32,13 +33,15 @@ const ItemDetailContainer = () => {
                 else{
                     setLoading(false)
                     setItem(res.filter(it=> it.id === itemId))
-                    setCart({
-                        ...cart,
-                        product,
-                        quantity
-                    })
+                    {item.map((item)=>{
+                        const {id,name,gr,place,price,origin,height,description,img} = item
+                            return(
+                                <>
+                                {setProduct(item)}
+                                </>
+                            )})
                 }
-            } ) 
+            } }) 
         }, 1000)
     
     },[itemId])
@@ -51,9 +54,6 @@ const ItemDetailContainer = () => {
                     return(
                         <>
                         <ItemDetail key={item.id} name={name} gr={gr} place={place} price={price} origin={origin} height={height} description={description} img={img}/>
-                        {setProduct(item)}
-
-                        
                         </>
 
                     )

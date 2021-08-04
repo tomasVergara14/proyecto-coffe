@@ -19,26 +19,12 @@ const Cart = () => {
     console.log(product)
     console.log(quantity)
 
-    console.log(cart)
-    useEffect(()=>{
-        setCartState(cart)
-    },[ProductDetailContext])
-
 
     //Ver por que no funciona
     return (
         <div>
             <h3>Cart</h3>
             <p>{quantity}</p>
-            {()=>{
-                if(cart){
-                    return(
-                        <>
-                        <p>{cart} hola</p>
-                        </>
-                    )
-                }
-            }}
         </div>
     )
 }
