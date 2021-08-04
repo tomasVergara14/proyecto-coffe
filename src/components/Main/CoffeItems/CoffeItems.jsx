@@ -21,7 +21,7 @@ const CoffeItems = () => {
              ) 
         }, 0)
     
-    },[])
+    },[data])
 
 
     return (
@@ -29,11 +29,11 @@ const CoffeItems = () => {
             <h3>Cafe</h3>
             <div className="container">
                 {item.map((link, index)=>{
-                    const {id, name, place,price , img, description}= link
+                    const {id, name,price , img, description}= link
                     return(
                         
-                        <NavLink className="containerItem" to={`/item/${id}`}>
-                            <Item className="itemProduct" key={index}
+                        <NavLink key={link.id} className="containerItem" to={`/item/${id}`}>
+                            <Item className="itemProduct" 
                             img={img} name={name} price={price} description={description} />
                         </NavLink>
                         

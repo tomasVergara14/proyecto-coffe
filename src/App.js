@@ -6,11 +6,12 @@ import ItemDetailContainer from './components/Main/ItemDetailContainer/ItemDetai
 import ItemList from './components/Main/ItemList/ItemList';
 import CoffeItems from './components/Main/CoffeItems/CoffeItems';
 import Cart from './components/Cart/Cart';
+import CartContextProvider from './handlers/Context/CartContext';
 
 function App() {
   return (
     <BrowserRouter>
-    
+    <CartContextProvider>
       <div className="App">
       <NavBarTotal/>
       <Switch>
@@ -35,6 +36,7 @@ function App() {
           
       </Switch>      
       </div>
+    </CartContextProvider>
     </BrowserRouter>
   );
 }

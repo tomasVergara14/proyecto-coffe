@@ -1,11 +1,14 @@
 import React, { useState} from 'react'
 import { NavLink } from 'react-router-dom'
 import './ItemCount.css'
-
+import { useCartContext } from '../../handlers/Context/CartContext'
 // const stockItem = 10
 // const initial = 1
 const ItemCount = ({initial,stockItem}) => {
     const shopState = "Agregar al carrito"
+
+    const {quantity, setQuantity} = useCartContext()
+    console.log(quantity)
 
     const [onAdd, setAdd] = useState(Number(initial))
     const [shop, setShop] = useState(shopState)
@@ -48,6 +51,7 @@ const ItemCount = ({initial,stockItem}) => {
                                 
                             </div>
                             <button className="Add" type="button" onClick={cart} > {shop} </button>
+                            {setQuantity(onAdd)}
                             </>
                             
                         )
@@ -55,7 +59,7 @@ const ItemCount = ({initial,stockItem}) => {
                     return(
                         <>
                         <NavLink to="/cart" ><button className="Add" type="button" > {shop} </button></NavLink>
-                        <p>Tienes: {onAdd} productos</p>
+                        <p>Tienes {quantity}</p>
                         </>
                         
                     )

@@ -33,15 +33,14 @@ const ItemDetailContainer = () => {
     
     },[itemId])
 
-    console.log(itemId)
 
     return (
         <div>
             {loading && <div className="spinner"></div>}
-            {item.map((item, index)=>{
+            {item.map((item)=>{
                 const {id,name,gr,place,price,origin,height,description,img} = item
                     return(
-                        <ItemDetail name={name} gr={gr} place={place} price={price} origin={origin} height={height} description={description} img={img}/>
+                        <ItemDetail key={item.id} name={name} gr={gr} place={place} price={price} origin={origin} height={height} description={description} img={img}/>
                     )
             })}
         </div>
