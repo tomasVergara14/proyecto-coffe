@@ -29,12 +29,12 @@ const Cart = () => {
     return (
         <div>
             <h3>Cart</h3>
+            <p>{quantity}</p>
             {()=>{
                 if(cart){
                     return(
                         <>
-                        <p>{quantity}</p>
-                        <p>{cart.quantity}</p>
+                        <p>{cart} hola</p>
                         </>
                     )
                 }
