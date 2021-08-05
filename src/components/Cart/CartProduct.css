@@ -1,0 +1,53 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.CartDetail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}
+.CartImg{
+        width: 80%;
+        height: 50vh;
+}
+.CartText{
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    bottom: 40px;
+    color:rgb(230, 236, 241);
+    background-color: rgba(0,0,0,0.5);
+}
+
+
+@media (min-width: 600px){
+   
+    .CartDetail{
+        width: 40%;
+        display: flex;
+        margin: 2px;
+        transition: transform 500ms ease;
+    }
+    .CartDetail:hover{
+        transform: scale(1.05);
+    }
+    .CartImg{
+        width: 50%;
+        height: 30vh;
+    }
+    .CartText{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        bottom: 40px;
+    }
+    
+}
+    
