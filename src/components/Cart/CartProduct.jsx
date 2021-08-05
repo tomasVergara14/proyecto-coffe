@@ -4,6 +4,11 @@ import './CartProduct.css'
 
 
 const CartProduct = (props) => {
+
+    function show(e){
+        
+        alert('hola')
+    }
     
     const {name, price, img}= props
     return (
@@ -12,7 +17,9 @@ const CartProduct = (props) => {
                 <div className="CartText">
                     <p>Nombre: {name} </p>
                     <p>Precio: {price} </p>
+                    
                 </div>
+                
             
             </div>
         

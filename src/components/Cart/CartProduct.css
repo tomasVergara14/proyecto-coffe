@@ -2,20 +2,27 @@
     margin: 0px;
     padding: 0px;
 }
+.CartItemConatiner{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 10%;
+}
 .CartDetail{
     display: flex;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0px;
 }
 .CartImg{
-        width: 80%;
+        width: 100%;
         height: 50vh;
 }
 .CartText{
     display: flex;
-    width: 80%;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
     position: relative;
@@ -23,25 +30,36 @@
     color:rgb(230, 236, 241);
     background-color: rgba(0,0,0,0.5);
 }
-
+.RemoveButton{
+    position: relative;
+    bottom: 35px;
+}
 
 @media (min-width: 600px){
    
-    .CartDetail{
-        width: 40%;
+    .CartItemConatiner{
         display: flex;
-        margin: 2px;
+        flex-direction: row;
+        width: 30%;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 2%;
+    }
+    .CartDetail{
+        width: 100%;
+        display: flex;
+        margin: 1px;
         transition: transform 500ms ease;
     }
     .CartDetail:hover{
         transform: scale(1.05);
     }
     .CartImg{
-        width: 50%;
+        width: 100%;
         height: 30vh;
     }
     .CartText{
-        width: 50%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;

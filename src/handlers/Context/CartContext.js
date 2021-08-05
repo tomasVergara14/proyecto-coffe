@@ -22,12 +22,17 @@ const CartContextProvider = ({children})=>{
         }
         
     }
+    function removeItem(list){
+        const newCart = Cart.filter(itemToRemove=> itemToRemove.product[0]!== list.product[0].id)
+        setCart([...newCart, list])
+    }
 
     return(
         <CartContext.Provider
         value={{ 
             Cart,
-            guardarItem
+            guardarItem,
+            removeItem
         }}>
             {children}
         </CartContext.Provider>

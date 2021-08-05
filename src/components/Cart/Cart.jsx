@@ -8,8 +8,7 @@ const Cart = () => {
 
     const [cartState, setCartState] = useState([])
 
-    const {Cart, guardarItem} = useCartContext()
-    const QuantityDetailContext = useQuantityContext()
+    const {Cart, removeItem} = useCartContext()
     const ProductDetailContext = useProductContext()
 
     const product = ProductDetailContext.product
@@ -22,12 +21,11 @@ const Cart = () => {
                 Cart.map((element, index)=>{
                     const {id, name, price, img}=element 
                     return(
-                        
-                        <>
+                        <div className="CartItemConatiner">
                         <CartProduct key={element.product[0].id} name={element.product[0].name} price={element.product[0].price} img={element.product[0].img} />
-                        </>
+                        <button className="RemoveButton">Remove Item</button>
+                        </div>
                     )
-                    
                 })
             )
         }
