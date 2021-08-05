@@ -9,7 +9,7 @@ const ItemCount = ({initial,stockItem}) => {
     const shopState = "Agregar al carrito"
 
     const {quantity, setQuantity} = useQuantityContext()
-    const {Cart, setCart} = useCartContext()
+    const {Cart, guardarItem} = useCartContext()
     const { product, setProduct} = useProductContext()
 
     const [onAdd, setAdd] = useState(Number(initial))
@@ -31,6 +31,7 @@ const ItemCount = ({initial,stockItem}) => {
         if (onAdd){
             setShop("Terminar Compra")
             setQuantity(onAdd)
+            guardarItem({product,onAdd})
            
         }
      }
@@ -62,7 +63,7 @@ const ItemCount = ({initial,stockItem}) => {
                     return(
                         <>
                         <NavLink to="/cart" ><button className="Add" type="button" > {shop} </button></NavLink>
-                        <p>Tienes {quantity}</p>
+            
                         </>
                         
                     )

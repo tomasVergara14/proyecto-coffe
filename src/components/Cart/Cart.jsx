@@ -7,7 +7,7 @@ const Cart = () => {
 
     const [cartState, setCartState] = useState("No hay productos en el carrito")
 
-    const {cart, setCart} = useCartContext()
+    const {Cart, guardarItem} = useCartContext()
     const QuantityDetailContext = useQuantityContext()
     const ProductDetailContext = useProductContext()
 
@@ -15,16 +15,13 @@ const Cart = () => {
     const quantity = QuantityDetailContext.quantity
     const cartArray = []
 
-    console.log(cart)
-    console.log(product)
-    console.log(quantity)
+    console.log(Cart)
 
 
     //Ver por que no funciona
     return (
         <div>
             <h3>Cart</h3>
-            <p>{quantity}</p>
         </div>
     )
 }

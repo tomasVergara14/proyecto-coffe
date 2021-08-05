@@ -9,8 +9,6 @@ import { useQuantityContext } from '../../../handlers/Context/QuantityContext'
 const ItemDetailContainer = () => {
     
     const {product, setProduct} = useProductContext()
-    const {cart, setCart} = useCartContext()
-    const {quantity, setQuantity} = useQuantityContext()
     
     const [item, setItem]=useState([])
     const [loading, setLoading] = useState(true)
@@ -19,7 +17,6 @@ const ItemDetailContainer = () => {
 
     const data = DefineItemDetail(itemId)
 
-    
     useEffect(()=>{
         setLoading(true)
         setTimeout(()=>{
@@ -27,24 +24,23 @@ const ItemDetailContainer = () => {
             .then(res =>{
                 if(itemId === undefined){
                     setLoading(false)
-                    setItem( DefineItemDetail(itemId))
-                    
+                    setItem( DefineItemDetail(itemId))    
                 }
                 else{
                     setLoading(false)
                     setItem(res.filter(it=> it.id === itemId))
-                    {item.map((item)=>{
-                        const {id,name,gr,place,price,origin,height,description,img} = item
-                            return(
-                                <>
-                                {setProduct(item)}
-                                </>
-                            )})
-                }
             } }) 
         }, 1000)
-    
     },[itemId])
+
+    useEffect(() => {
+        const getItem = data.filter((item)=>
+            item.id === itemId
+        )
+        setProduct(getItem)
+    }, [itemId])
+
+    
 
     return (
         <div>

@@ -38,7 +38,6 @@ const ItemList = () => {
         }, 5000)
     
     },[itemId])
-    console.log(item)
 
 
     return (
