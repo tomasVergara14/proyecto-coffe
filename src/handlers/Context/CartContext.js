@@ -20,15 +20,11 @@ const CartContextProvider = ({children})=>{
             const newCount = idx.quantity + newItem.quantity
             console.log(newCount)
             const uniqueList = Cart.filter(unique => unique.item[0].id !== newItem.item[0].id)
-            setCart([...uniqueList,{item :newItem.item, quantity: newItem.quantity + newCount}])
+            setCart([...uniqueList,{item :newItem.item, quantity: newCount}])
         }
         
     }
-    // function removeItem(list){
-    //     const idx = Cart.find(item => list.product[0].id === item.product[0].id)
-    //     if(idx !== undefined){
-    //         const newCart = Cart.filter(itemToRemove=> itemToRemove.product[0].id!== list.product[0].id)
-    //         setCart([newCart])
+    // function removeItem(id){
     //     }
         
     // }
