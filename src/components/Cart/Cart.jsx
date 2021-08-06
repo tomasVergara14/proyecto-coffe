@@ -22,8 +22,8 @@ const Cart = () => {
                     const {id, name, price, img}=element 
                     return(
                         <div className="CartItemConatiner">
-                        <CartProduct key={element.product[0].id} name={element.product[0].name} price={element.product[0].price} img={element.product[0].img} />
-                        <button className="RemoveButton">Remove Item</button>
+                        <CartProduct key={element.item[0].id} name={element.item[0].name} price={element.item[0].price} img={element.item[0].img} />
+                        {/* <button onClick={removeItem(element)} className="RemoveButton">Remove Item</button> */}
                         </div>
                     )
                 })

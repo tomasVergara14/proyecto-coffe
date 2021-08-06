@@ -31,7 +31,7 @@ const ItemCount = ({initial,stockItem}) => {
         if (onAdd){
             setShop("Terminar Compra")
             setQuantity(onAdd)
-            guardarItem({product,onAdd})
+            guardarItem({item:product, quantity:onAdd})
            
         }
      }
