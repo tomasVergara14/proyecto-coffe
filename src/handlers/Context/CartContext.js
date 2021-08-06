@@ -24,17 +24,19 @@ const CartContextProvider = ({children})=>{
         }
         
     }
-    // function removeItem(id){
-    //     }
-        
-    // }
+    function removeItem(ItemId){
+        const Allproducts = Cart.filter(itemList => itemList.item[0].id !== ItemId)
+        setCart(Allproducts)
+    }
+
+
 
     return(
         <CartContext.Provider
         value={{ 
             Cart,
             guardarItem,
-            // removeItem
+            removeItem
         }}>
             {children}
         </CartContext.Provider>
