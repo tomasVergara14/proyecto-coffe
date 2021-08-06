@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
 import { useCartContext } from '../../handlers/Context/CartContext'
-import { useQuantityContext } from '../../handlers/Context/QuantityContext'
 import { useProductContext } from '../../handlers/Context/ProductContext'
 import CartProduct from './CartProduct'
 
@@ -23,7 +22,7 @@ const Cart = () => {
                     return(
                         <div className="CartItemConatiner">
                         <CartProduct key={element.item[0].id} name={element.item[0].name} price={element.item[0].price} img={element.item[0].img} />
-                        {/* <button onClick={removeItem(element)} className="RemoveButton">Remove Item</button> */}
+                        <p>Tienes {element.quantity} de este producto </p>
                         </div>
                     )
                 })
