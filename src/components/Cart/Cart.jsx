@@ -29,6 +29,7 @@ const Cart = () => {
                         <p>Tienes {element.quantity} de este producto </p>
                         <p>Precio: {Precio(element.quantity, element.item[0].price)} $</p>
                         
+                        
                         {/* <button onClick={removeItem(element.item[0].id)}>Remover</button> */}
                         </div>
                     )
