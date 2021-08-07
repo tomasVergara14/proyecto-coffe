@@ -1,16 +1,12 @@
 import React, {useEffect, useState} from 'react'
 import { useCartContext } from '../../handlers/Context/CartContext'
-import { useProductContext } from '../../handlers/Context/ProductContext'
 import CartProduct from './CartProduct'
 
 const Cart = () => {
 
-    const [cartState, setCartState] = useState([])
 
     const {Cart, removeItem} = useCartContext()
-    const ProductDetailContext = useProductContext()
 
-    const product = ProductDetailContext.product
 
     function Precio (PrecioElemento, CantidadElemento){
        return (Number(PrecioElemento) * Number(CantidadElemento))
@@ -21,7 +17,7 @@ const Cart = () => {
     if(Cart.length !==0){
        return(
            <>
-                <div>Productos</div>
+                <div>Productos en el carrito</div>
                 {Cart.map((element, index)=>{
                     const {id, name, price, img}=element 
                     return(
@@ -39,16 +35,7 @@ const Cart = () => {
         return(<div>No hay productos en el carrito</div>)
         
     }
-    console.log(cartState.length)
 
-
-    //Ver por que no funciona
-    // return (
-    //     <div>
-    //         <h3>Cart</h3>
-    //         {cartState.length !==0 ? cartState: <p>No hay productos en el carrito</p>}
-    //     </div>
-    // )
 }
 
 export default Cart
