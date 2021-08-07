@@ -18,36 +18,37 @@ const Cart = () => {
 
     console.log(Cart)
 
-    useEffect(() => {
-        if(Cart.length !==0){
-            setCartState(
-                Cart.map((element, index)=>{
+    if(Cart.length !==0){
+       return(
+           <>
+                <div>Productos</div>
+                {Cart.map((element, index)=>{
                     const {id, name, price, img}=element 
                     return(
                         <div className="CartItemConatiner" key={element.item[0].id}>
                         <CartProduct  name={element.item[0].name} price={element.item[0].price} img={element.item[0].img} />
                         <p>Tienes {element.quantity} de este producto </p>
-                        <p>Precio: {Precio(element.quantity, element.item[0].price)} $</p>
-                        
-                        
-                        {/* <button onClick={removeItem(element.item[0].id)}>Remover</button> */}
+                        <p>Precio: {Precio(element.quantity, element.item[0].price)} $</p>  
+                        <button onClick={()=>removeItem(element.item[0].id)}>Remover</button>
                         </div>
                     )
-                })
-            )
-        }
-        console.log(cartState.length)
-    }, [product])
-    
+                })}
+            </>
+        )
+    }else{
+        return(<div>No hay productos en el carrito</div>)
+        
+    }
+    console.log(cartState.length)
 
 
     //Ver por que no funciona
-    return (
-        <div>
-            <h3>Cart</h3>
-            {cartState.length !==0 ? cartState: <p>No hay productos en el carrito</p>}
-        </div>
-    )
+    // return (
+    //     <div>
+    //         <h3>Cart</h3>
+    //         {cartState.length !==0 ? cartState: <p>No hay productos en el carrito</p>}
+    //     </div>
+    // )
 }
 
 export default Cart
