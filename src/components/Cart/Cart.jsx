@@ -5,7 +5,7 @@ import CartProduct from './CartProduct'
 const Cart = () => {
 
 
-    const {Cart, removeItem} = useCartContext()
+    const {Cart, removeItem, ClearItems} = useCartContext()
 
 
     function Precio (PrecioElemento, CantidadElemento){
@@ -29,6 +29,7 @@ const Cart = () => {
                         </div>
                     )
                 })}
+                <button onClick={()=>ClearItems()} >Limpiar carrito</button>
             </>
         )
     }else{

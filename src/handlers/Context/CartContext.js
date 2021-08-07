@@ -28,6 +28,9 @@ const CartContextProvider = ({children})=>{
         const Allproducts = Cart.filter(itemList => itemList.item[0].id !== ItemId)
         setCart(Allproducts)
     }
+    function ClearItems(){
+        setCart([])
+    }
 
 
 
@@ -36,7 +39,8 @@ const CartContextProvider = ({children})=>{
         value={{ 
             Cart,
             guardarItem,
-            removeItem
+            removeItem,
+            ClearItems
         }}>
             {children}
         </CartContext.Provider>
