@@ -17,14 +17,12 @@ const Cart = () => {
     if(Cart.length !==0){
        return(
            <>
-                <div>Productos en el carrito</div>
+                <h3>Productos en el carrito</h3>
                 {Cart.map((element, index)=>{
                     const {id, name, price, img}=element 
                     return(
                         <div className="CartItemConatiner" key={element.item[0].id}>
-                        <CartProduct  name={element.item[0].name} price={element.item[0].price} img={element.item[0].img} />
-                        <p>Tienes {element.quantity} de este producto </p>
-                        <p>Precio: {Precio(element.quantity, element.item[0].price)} $</p>  
+                        <CartProduct  name={element.item[0].name} price={Precio(element.quantity, element.item[0].price)} img={element.item[0].img} CountItem={element.quantity} /> 
                         <button onClick={()=>removeItem(element.item[0].id)}>Remover</button>
                         </div>
                     )
@@ -33,7 +31,7 @@ const Cart = () => {
             </>
         )
     }else{
-        return(<div>No hay productos en el carrito</div>)
+        return(<h3>No hay productos en el carrito</h3>)
         
     }
 

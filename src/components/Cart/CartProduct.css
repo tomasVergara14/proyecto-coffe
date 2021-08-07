@@ -26,13 +26,12 @@
     flex-direction: column;
     justify-content: center;
     position: relative;
-    bottom: 40px;
+    bottom: 55px;
     color:rgb(230, 236, 241);
     background-color: rgba(0,0,0,0.5);
 }
 .RemoveButton{
     position: relative;
-    bottom: 35px;
 }
 
 @media (min-width: 600px){

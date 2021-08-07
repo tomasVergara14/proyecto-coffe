@@ -10,13 +10,14 @@ const CartProduct = (props) => {
         alert('hola')
     }
     
-    const {name, price, img}= props
+    const {name, price, img, CountItem}= props
     return (
             <div className="CartDetail">         
                 <img className="CartImg" src={img} alt="" />
                 <div className="CartText">
                     <p>Nombre: {name} </p>
-                    <p>Precio: {price} </p>
+                    <p>Precio total: {price} </p>
+                    <p>Cantidad: {CountItem} </p>
                     
                 </div>
                 
