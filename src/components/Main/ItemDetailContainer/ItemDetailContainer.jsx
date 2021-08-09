@@ -3,12 +3,10 @@ import { useParams } from 'react-router-dom'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import DefineItemDetail from '../../../handlers/DefineItemDetail'
 import { useProductContext } from '../../../handlers/Context/ProductContext'
-import { useCartContext } from '../../../handlers/Context/CartContext'
-import { useQuantityContext } from '../../../handlers/Context/QuantityContext'
 
 const ItemDetailContainer = () => {
     
-    const {product, setProduct} = useProductContext()
+    const {setProduct} = useProductContext()
     
     const [item, setItem]=useState([])
     const [loading, setLoading] = useState(true)
@@ -41,7 +39,6 @@ const ItemDetailContainer = () => {
     }, [itemId])
 
     
-
     return (
         <div>
             {loading && <div className="spinner"></div>}
@@ -51,7 +48,6 @@ const ItemDetailContainer = () => {
                         <div key={item.id}>
                         <ItemDetail  name={name} gr={gr} place={place} price={price} origin={origin} height={height} description={description} img={img}/>
                         </div>
-
                     )
             })}
         </div>

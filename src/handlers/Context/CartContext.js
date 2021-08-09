@@ -31,6 +31,11 @@ const CartContextProvider = ({children})=>{
     function ClearItems(){
         setCart([])
     }
+    
+    const TotalItems = Cart.reduce((acc, item)=>{
+        return acc += item.quantity
+    },0)
+
 
 
 
@@ -40,7 +45,8 @@ const CartContextProvider = ({children})=>{
             Cart,
             guardarItem,
             removeItem,
-            ClearItems
+            ClearItems,
+            TotalItems
         }}>
             {children}
         </CartContext.Provider>

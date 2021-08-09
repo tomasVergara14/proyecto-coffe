@@ -20,7 +20,6 @@ const CoffeItems = () => {
                 }
              ) 
         }, 0)
-    
     },[data])
 
 
@@ -31,18 +30,13 @@ const CoffeItems = () => {
                 {item.map((link, index)=>{
                     const {id, name,price , img, description}= link
                     return(
-                        
                         <NavLink key={link.id} className="containerItem" to={`/item/${id}`}>
                             <Item className="itemProduct" 
                             img={img} name={name} price={price} description={description} />
-                        </NavLink>
-                        
+                        </NavLink>      
                     )   
                     })}
-                
-            
             </div>
-             
         </div>
     )
 }

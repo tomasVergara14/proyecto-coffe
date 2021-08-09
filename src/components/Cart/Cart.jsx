@@ -4,9 +4,7 @@ import CartProduct from './CartProduct'
 
 const Cart = () => {
 
-
     const {Cart, removeItem, ClearItems} = useCartContext()
-
 
     function Precio (PrecioElemento, CantidadElemento){
        return (Number(PrecioElemento) * Number(CantidadElemento))
@@ -18,8 +16,8 @@ const Cart = () => {
        return(
            <>
                 <h3>Productos en el carrito</h3>
-                {Cart.map((element, index)=>{
-                    const {id, name, price, img}=element 
+                {Cart.map((element)=>{
+    
                     return(
                         <div className="CartItemConatiner" key={element.item[0].id}>
                         <CartProduct  name={element.item[0].name} price={Precio(element.quantity, element.item[0].price)} img={element.item[0].img} CountItem={element.quantity} /> 
@@ -31,10 +29,8 @@ const Cart = () => {
             </>
         )
     }else{
-        return(<h3>No hay productos en el carrito</h3>)
-        
+        return(<h3>No hay productos en el carrito</h3>)        
     }
-
 }
 
 export default Cart

@@ -13,9 +13,7 @@ const ItemDetail = ({name, gr,place,price,origin,height,description,img}) => {
                 <div>{height} {description} </div>
 
                 <ItemCount initial= "1" stockItem="5"/>
-
-            </div>
-            
+            </div>            
         </div>
     )
 }

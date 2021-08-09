@@ -4,27 +4,17 @@ import './CartProduct.css'
 
 
 const CartProduct = (props) => {
-
-    function show(e){
-        
-        alert('hola')
-    }
     
     const {name, price, img, CountItem}= props
     return (
             <div className="CartDetail">         
-                <img className="CartImg" src={img} alt="" />
+                <img className="CartImg" src={img} alt="Mostrar Cafe adquirido en el carrito" />
                 <div className="CartText">
                     <p>Nombre: {name} </p>
                     <p>Precio total: {price} </p>
-                    <p>Cantidad: {CountItem} </p>
-                    
-                </div>
-                
-            
-            </div>
-        
-        
+                    <p>Cantidad: {CountItem} </p>                    
+                </div>                            
+            </div>                
     )
 }
 

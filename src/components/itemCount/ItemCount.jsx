@@ -8,9 +8,9 @@ import { useProductContext } from '../../handlers/Context/ProductContext'
 const ItemCount = ({initial,stockItem}) => {
     const shopState = "Agregar al carrito"
 
-    const {quantity, setQuantity} = useQuantityContext()
-    const {Cart, guardarItem} = useCartContext()
-    const { product, setProduct} = useProductContext()
+    const {setQuantity} = useQuantityContext()
+    const {guardarItem} = useCartContext()
+    const { product} = useProductContext()
 
     const [onAdd, setAdd] = useState(Number(initial))
     const [shop, setShop] = useState(shopState)
@@ -27,7 +27,7 @@ const ItemCount = ({initial,stockItem}) => {
         }
     }
 
-    const cart = (event)=>{ 
+    const cart = ()=>{ 
         if (onAdd){
             setShop("Terminar Compra")
             setQuantity(onAdd)
@@ -38,11 +38,8 @@ const ItemCount = ({initial,stockItem}) => {
 
     return (
         
-        <div >
-            
-            <form className="itemCount" action="">
-                
-                
+        <div >        
+            <form className="itemCount" action="">               
                 {(()=>{
                     if(shop === shopState){
                         return(
@@ -54,23 +51,17 @@ const ItemCount = ({initial,stockItem}) => {
                             <button className="Button" type="button" onClick={add}>+</button>
                                 
                             </div>
-                            <button className="Add" type="button" onClick={cart} > {shop} </button>
-                            
-                            </>
-                            
+                            <button className="Add" type="button" onClick={cart} > {shop} </button>                            
+                            </>                            
                         )
                     }
                     return(
                         <>
-                        <NavLink to="/cart" ><button className="Add" type="button" > {shop} </button></NavLink>
-            
-                        </>
-                        
+                        <NavLink to="/cart" ><button className="Add" type="button" > {shop} </button></NavLink>            
+                        </>                        
                     )
                 })() }
-            </form>
-            
-            
+            </form>      
         </div>
     )
 }
