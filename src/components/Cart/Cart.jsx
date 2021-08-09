@@ -33,7 +33,7 @@ const Cart = () => {
             </div>
         )
     }else{
-        return(<h3 className="TitleCart">No hay productos en el carrito</h3>)        
+        return(<h3 className="TitleCart">Sin productos</h3>)        
     }
 }
 

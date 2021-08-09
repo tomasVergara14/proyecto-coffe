@@ -5,10 +5,12 @@
 .ContainerCart{
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 }
 .TitleCart{
-    width: 100vh;
+    width: 100%;
+    margin: 2%;
 }
 .EachItemContainer{
     display: flex;
@@ -80,14 +82,16 @@
     }
     .CartItemConatiner{
         display: flex;
-        width: 30%;
+        width: 33%;
         flex-wrap: wrap;
         justify-content: center;
+        
     }
     .CartDetail{
         width: 100%;
         display: flex;
-        margin: 1px;
+        margin: 1%;
+        padding: 2%;
         transition: transform 500ms ease;
     }
     .CartDetail:hover{
@@ -103,7 +107,7 @@
         flex-direction: column;
         justify-content: center;
         position: relative;
-        bottom: 40px;
+        bottom: 43px;
         font-size: 0.8em;
     }
     .ButtonClean{
