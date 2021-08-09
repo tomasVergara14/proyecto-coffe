@@ -82,7 +82,8 @@
     }
     .CartItemConatiner{
         display: flex;
-        width: 33%;
+        width: 40%;
+
         flex-wrap: wrap;
         justify-content: center;
         
