@@ -18,7 +18,6 @@ const CartContextProvider = ({children})=>{
             setCart([...Cart,newItem])
         }else{
             const newCount = idx.quantity + newItem.quantity
-            console.log(newCount)
             const uniqueList = Cart.filter(unique => unique.item[0].id !== newItem.item[0].id)
             setCart([...uniqueList,{item :newItem.item, quantity: newCount}])
         }
@@ -35,9 +34,6 @@ const CartContextProvider = ({children})=>{
     const TotalItems = Cart.reduce((acc, item)=>{
         return acc += item.quantity
     },0)
-
-
-
 
     return(
         <CartContext.Provider

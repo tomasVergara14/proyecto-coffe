@@ -14,22 +14,26 @@ const Cart = () => {
 
     if(Cart.length !==0){
        return(
-           <>
-                <h3>Productos en el carrito</h3>
+           <div className="ContainerCart">
+                <h3 className="TitleCart">Productos en el carrito</h3>
+                <div className="EachItemContainer">
                 {Cart.map((element)=>{
-    
-                    return(
-                        <div className="CartItemConatiner" key={element.item[0].id}>
-                        <CartProduct  name={element.item[0].name} price={Precio(element.quantity, element.item[0].price)} img={element.item[0].img} CountItem={element.quantity} /> 
-                        <button onClick={()=>removeItem(element.item[0].id)}>Remover</button>
-                        </div>
-                    )
-                })}
-                <button onClick={()=>ClearItems()} >Limpiar carrito</button>
-            </>
+                        
+                        return(
+                            <div className="CartItemConatiner" key={element.item[0].id}>
+                            <CartProduct  name={element.item[0].name} price={Precio(element.quantity, element.item[0].price)} img={element.item[0].img} CountItem={element.quantity} /> 
+                            <button className="ButtonRemove" onClick={()=>removeItem(element.item[0].id)}>Remover</button>
+                            </div>
+                        )
+                    })}
+                    </div>
+                    <button className="ButtonClean" onClick={()=>ClearItems()} >Limpiar carrito</button>    
+                
+                
+            </div>
         )
     }else{
-        return(<h3>No hay productos en el carrito</h3>)        
+        return(<h3 className="TitleCart">No hay productos en el carrito</h3>)        
     }
 }
 
