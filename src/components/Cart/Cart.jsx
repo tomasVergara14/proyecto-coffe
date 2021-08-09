@@ -4,7 +4,7 @@ import CartProduct from './CartProduct'
 
 const Cart = () => {
 
-    const {Cart, removeItem, ClearItems} = useCartContext()
+    const {Cart, removeItem, ClearItems, TotalPrice} = useCartContext()
 
     function Precio (PrecioElemento, CantidadElemento){
        return (Number(PrecioElemento) * Number(CantidadElemento))
@@ -27,6 +27,7 @@ const Cart = () => {
                         )
                     })}
                     </div>
+                    <h3>Total: {TotalPrice} </h3>
                     <button className="ButtonClean" onClick={()=>ClearItems()} >Limpiar carrito</button>    
                 
                 

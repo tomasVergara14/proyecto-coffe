@@ -34,6 +34,12 @@ const CartContextProvider = ({children})=>{
     const TotalItems = Cart.reduce((acc, item)=>{
         return acc += item.quantity
     },0)
+    console.log(Cart)
+
+    const TotalPrice = Cart.reduce((acc, val)=>{
+        return acc += (val.item[0]. price * val.quantity)
+    },0)
+    console.log(TotalPrice)
 
     return(
         <CartContext.Provider
@@ -42,7 +48,8 @@ const CartContextProvider = ({children})=>{
             guardarItem,
             removeItem,
             ClearItems,
-            TotalItems
+            TotalItems,
+            TotalPrice
         }}>
             {children}
         </CartContext.Provider>
