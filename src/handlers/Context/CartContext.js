@@ -39,7 +39,6 @@ const CartContextProvider = ({children})=>{
     const TotalPrice = Cart.reduce((acc, val)=>{
         return acc += (val.item[0]. price * val.quantity)
     },0)
-    console.log(TotalPrice)
 
     return(
         <CartContext.Provider
