@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import DefineItemDetail from '../../../handlers/DefineItemDetail'
 import { useProductContext } from '../../../handlers/Context/ProductContext'
+import { getFirestore } from '../../../services/firebaseService'
 
 const ItemDetailContainer = () => {
     
@@ -15,28 +16,37 @@ const ItemDetailContainer = () => {
 
     const data = DefineItemDetail(itemId)
 
-    useEffect(()=>{
-        setLoading(true)
-        setTimeout(()=>{
-            Promise.resolve(data)
-            .then(res =>{
-                if(itemId === undefined){
-                    setLoading(false)
-                    setItem( DefineItemDetail(itemId))    
-                }
-                else{
-                    setLoading(false)
-                    setItem(res.filter(it=> it.id === itemId))
-            } }) 
-        }, 1000)
-    },[itemId])
+    // useEffect(()=>{
+    //     setLoading(true)
+    //     setTimeout(()=>{
+    //         Promise.resolve(data)
+    //         .then(res =>{
+    //             if(itemId === undefined){
+    //                 setLoading(false)
+    //                 setItem( DefineItemDetail(itemId))    
+    //             }
+    //             else{
+    //                 setLoading(false)
+    //                 setItem(res.filter(it=> it.id === itemId))
+    //         } }) 
+    //     }, 1000)
+    // },[itemId])
 
     useEffect(() => {
-        const getItem = data.filter((item)=>
-            item.id === itemId
-        )
-        setProduct(getItem)
-    }, [itemId])
+        const dbQuery = getFirestore()
+        dbQuery.collection('items').get()
+        .then(response=>setItem(response.docs.map((itemFirebase, index)=>(
+            {...itemFirebase.data(), id: itemFirebase.id}
+        ))))
+    }, [])
+    console.log(item)
+
+    // useEffect(() => {
+    //     const getItem = data.filter((item)=>
+    //         item.id === itemId
+    //     )
+    //     setProduct(getItem)
+    // }, [itemId])
 
     
     return (
@@ -51,7 +61,7 @@ const ItemDetailContainer = () => {
                     )
             })}
         </div>
-    )
+     )
 }
 
 export default ItemDetailContainer

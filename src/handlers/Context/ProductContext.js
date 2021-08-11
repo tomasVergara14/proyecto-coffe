@@ -7,7 +7,7 @@ export const useProductContext = ()=>useContext(ProductContext)
 
 const ProductContextProvider = ({children})=>{
 
-    const [ product, setProduct]= useState({})
+    const [ product, setProduct]= useState([])
 
     return(
         <ProductContext.Provider
