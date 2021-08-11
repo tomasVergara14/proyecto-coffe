@@ -5,11 +5,14 @@ import { NavLink } from 'react-router-dom'
 import categoriesData from '../../../data/Categories'
 import { getFirestore } from '../../../services/firebaseService'
 
+
+
 const Category = () => {
     
     const [category, setCategory]=useState([])
     const {categoryId} = useParams()
-    const data = categoriesData
+    // const data = categoriesData
+    const url = "/category/"
     const dbQuery = getFirestore()
     
     
@@ -36,10 +39,10 @@ const Category = () => {
     return (
         <div className="item">
             {category.map((categories)=>{
-                const {id, category, url, img, alt}= categories
+                const { categoryId, image, title, id}= categories
                 return (
                     <div key={id} className="itemBox" > 
-                        <NavLink to={`${url}${categories.id}`} className="category" key={id}> <img src={(img)} alt={alt} className="img" /> <p className="product" >{category} </p>  </NavLink>
+                        <NavLink to={`${url}${categories.categoryId}`} className="category" key={id}> <img src={(image)} alt="Imagen de granos de cafe" className="img" /> <p className="product" >{title} </p>  </NavLink>
                     </div>
                 )
             } )}
