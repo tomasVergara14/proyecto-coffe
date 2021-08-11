@@ -35,7 +35,7 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         const dbQuery = getFirestore()
         dbQuery.collection('items').get()
-        .then(response=>setItem(response.docs.map((itemFirebase, index)=>(
+        .then(response=>setItem(response.docs.map(itemFirebase=>(
             {...itemFirebase.data(), id: itemFirebase.id}
         ))))
     }, [])
