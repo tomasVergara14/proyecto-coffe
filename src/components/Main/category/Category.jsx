@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import './Category.css'
 import { NavLink } from 'react-router-dom'
-import categoriesData from '../../../data/Categories'
 import { getFirestore } from '../../../services/firebaseService'
 
 
@@ -11,7 +10,6 @@ const Category = () => {
     
     const [category, setCategory]=useState([])
     const {categoryId} = useParams()
-    // const data = categoriesData
     const url = "/category/"
     const dbQuery = getFirestore()
     

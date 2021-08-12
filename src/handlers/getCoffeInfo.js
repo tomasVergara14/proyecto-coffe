@@ -1,15 +1,12 @@
 import { getFirestore } from '../services/firebaseService'
 import data from '../data/CoffeProducts'
 
-const getCoffeInfo = (async ()=>{
+const getCoffeInfo = (()=>{
     try{
         const dbQuery = getFirestore()
-        const colecction = dbQuery.collection('items')
-        const coffeColecction = await colecction.where('categoryId','==', '1').get()
-        const result = await coffeColecction.docs.map(itemFirebase=>(
-             {id: itemFirebase.id, key:itemFirebase.id ,...itemFirebase.data() }))
-            //  console.log(result)
-    return result
+        const colecction = dbQuery.collection('items').where('categoryId','==', '1')
+        return colecction
+        
     }catch(err){
         console.log(err)
     }
