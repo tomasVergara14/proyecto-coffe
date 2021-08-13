@@ -16,19 +16,6 @@ const Category = () => {
     
     
     useEffect(()=>{
-        // setTimeout(()=>{
-        //     Promise.resolve(data)
-        //     .then(res =>{
-        //         if(categoryId === undefined){
-        //             setCategory(res)
-        //         }
-        //         else{
-        //             setCategory(res.filter(it=> it.id === categoryId))
-        //         }
-        //     } ) 
-        // }, 0)
-        
-
         dbQuery.collection('categories').get()
         .then(response=>
             {if(idCategory === undefined){
@@ -38,18 +25,15 @@ const Category = () => {
             }else{
                 const categoryFilter = response.docs.filter(cat => cat.data().categoryId === idCategory )
                 setCategory(categoryFilter[0].data())
-            }
-            }
+            }}
             )
-            console.log(category)
-        console.log(idCategory)
 },[idCategory])
     
     return (
         <div className="item">
             {category.length >1 ?
             category.map((categories)=>{
-                const { categoryId, image, title, id}= categories
+                const { image, title, id}= categories
                 return (
                     <div key={id} className="itemBox" > 
                         <NavLink to={`${url}${categories.categoryId}`} className="category" key={id}> <img src={image} alt="Imagen de granos de cafe" className="img" /> <p className="product" >{title} </p>  </NavLink>
