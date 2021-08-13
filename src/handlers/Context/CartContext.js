@@ -12,19 +12,20 @@ const CartContextProvider = ({children})=>{
 
     function guardarItem (newItem){
         //identificamos item repetidos
-        const idx = Cart.find(item => newItem.item[0].id === item.item[0].id)
+        
+        const idx = Cart.find(item => newItem.item.id === item.item.id)
         console.log(idx)
         if(idx === undefined){
             setCart([...Cart,newItem])
         }else{
             const newCount = idx.quantity + newItem.quantity
-            const uniqueList = Cart.filter(unique => unique.item[0].id !== newItem.item[0].id)
+            const uniqueList = Cart.filter(unique => unique.item.id !== newItem.item.id)
             setCart([...uniqueList,{item :newItem.item, quantity: newCount}])
         }
         
     }
     function removeItem(ItemId){
-        const Allproducts = Cart.filter(itemList => itemList.item[0].id !== ItemId)
+        const Allproducts = Cart.filter(itemList => itemList.item.id !== ItemId)
         setCart(Allproducts)
     }
     function ClearItems(){
@@ -37,8 +38,9 @@ const CartContextProvider = ({children})=>{
     console.log(Cart)
 
     const TotalPrice = Cart.reduce((acc, val)=>{
-        return acc += (val.item[0]. price * val.quantity)
+        return acc += (val.item.price * val.quantity)
     },0)
+    console.log(TotalPrice)
 
     return(
         <CartContext.Provider

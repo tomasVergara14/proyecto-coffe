@@ -14,43 +14,25 @@ const ItemList = () => {
     const {itemId} = useParams()
 
     const products = DefineCategory(idCategory)
-    // const res = products.get()
-    // .then(response=>console.log(response.docs[0].data()))
-    
-    //Category y lista de productos de ese category
-    useEffect(()=>{
-        // setLoading(true)
-        // setTimeout(()=>{
-        //     Promise.resolve(data) 
-        //     .then(res =>{
-        //         if(itemId === undefined){
-        //             setLoading(false)
-        //             setItem(DefineCategory(idCategory))
 
-        //         }
-        //         else{
-        //             setLoading(false)
-        //             setItem(res.filter(it=> it.id === itemId))        
-        //         }
-        //     } ) 
-        // }, 5000)
+    useEffect(()=>{
         const productsData = products.get()
         .then(response=>{
-            console.log(response.docs[1].data())
-            console.log(item)
+            setLoading(true)
             if(itemId===undefined){
+                setLoading(false)
                 setItem(response.docs.map(itm=>(
                     {...itm.data(), id:itm.id}
                 )))
             }else{
+                setLoading(false)
                 const productFilter = response.docs.filter(itm => itm.data().id === itemId )
-                setItem(productFilter[0].data())
+                console.log(productFilter[0].data())
+                setItem({...productFilter[0].data(), id:productFilter[0].id})
             }
-            console.log(item)
-        })
-    
+        })    
     },[itemId])
-
+    console.log(item)
 
     return (
         <div className="containerItemBox" >
@@ -59,19 +41,14 @@ const ItemList = () => {
                 {loading && <div className="spinner"></div>}
                 {item.map((link, index)=>{
                     const {id, title, price , image, description}= link
-                    return(
-                        
-                        <NavLink className="containerItem" to={`/item/${id}`}>
+                    return(                        
+                        <NavLink key={id} className="containerItem" to={`/item/${id}`}>
                             <Item className="itemProduct" key={index}
                             img={image} name={title} price={price} description={description} />
-                        </NavLink>
-                        
+                        </NavLink>                        
                     )   
-                    })}
-                
-            
-            </div>
-             
+                    })}                            
+            </div>             
         </div>
     )
 }

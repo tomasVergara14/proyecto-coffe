@@ -8,7 +8,7 @@ import { useProductContext } from '../../handlers/Context/ProductContext'
 const ItemCount = ({initial,stockItem}) => {
     const shopState = "Agregar al carrito"
 
-    const {setQuantity} = useQuantityContext()
+    const {quantity,setQuantity} = useQuantityContext()
     const {guardarItem} = useCartContext()
     const { product} = useProductContext()
 
@@ -35,6 +35,8 @@ const ItemCount = ({initial,stockItem}) => {
            
         }
      }
+     console.log(quantity)
+    //  console.log(guardarItem())
 
     return (
         

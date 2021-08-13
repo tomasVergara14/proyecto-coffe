@@ -20,9 +20,9 @@ const Cart = () => {
                 {Cart.map((element)=>{
                         
                         return(
-                            <div className="CartItemConatiner" key={element.item[0].id}>
-                            <CartProduct  name={element.item[0].name} price={Precio(element.quantity, element.item[0].price)} img={element.item[0].img} CountItem={element.quantity} /> 
-                            <button className="ButtonRemove" onClick={()=>removeItem(element.item[0].id)}>Remover</button>
+                            <div className="CartItemConatiner" key={element.item.id}>
+                            <CartProduct  name={element.item.title} price={Precio(element.quantity, element.item.price)} img={element.item.image} CountItem={element.quantity} /> 
+                            <button className="ButtonRemove" onClick={()=>removeItem(element.item.id)}>Remover</button>
                             </div>
                         )
                     })}
