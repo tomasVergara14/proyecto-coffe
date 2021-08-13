@@ -10,29 +10,25 @@ const ItemList = () => {
     
     const [item, setItem] = useState([])
     const [loading, setLoading] = useState(true)
-    const {categoryId}=useParams()
+    const {idCategory}=useParams()
     const {itemId} = useParams()
 
-    const data = DefineCategory(categoryId)
+    const data = DefineCategory(idCategory)
     
     //Category y lista de productos de ese category
     useEffect(()=>{
         setLoading(true)
         setTimeout(()=>{
-            Promise.resolve(data)
-            
+            Promise.resolve(data) 
             .then(res =>{
                 if(itemId === undefined){
                     setLoading(false)
-                    setItem(DefineCategory(categoryId))
-                    
-                    
+                    setItem(DefineCategory(idCategory))
+
                 }
                 else{
                     setLoading(false)
-                    setItem(res.filter(it=> it.id === itemId))
-                   
-                   
+                    setItem(res.filter(it=> it.id === itemId))        
                 }
             } ) 
         }, 5000)
@@ -43,7 +39,7 @@ const ItemList = () => {
     return (
         <div className="containerItemBox" >
             <h3>Productos</h3>
-            <div className="container">
+            {/* <div className="container">
                 {loading && <div className="spinner"></div>}
                 {item.map((link, index)=>{
                     const {id, name, place,price , img, description}= link
@@ -58,7 +54,7 @@ const ItemList = () => {
                     })}
                 
             
-            </div>
+            </div> */}
              
         </div>
     )

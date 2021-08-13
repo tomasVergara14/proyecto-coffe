@@ -1,5 +1,4 @@
 import { getFirestore } from '../services/firebaseService'
-import data from '../data/CoffeProducts'
 
 const getCoffeInfo = (()=>{
     try{
@@ -12,5 +11,4 @@ const getCoffeInfo = (()=>{
     }
      
 })()
-console.log(getCoffeInfo)
 export default getCoffeInfo

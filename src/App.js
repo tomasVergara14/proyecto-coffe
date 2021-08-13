@@ -28,7 +28,7 @@ function App() {
             <CoffeItems/>
             
           </Route>
-          <Route exact path="/category/:categoryId" >
+          <Route exact path="/category/:idCategory" >
             <ItemListContainer
             greeting="Categorias"/>
             <ItemList/>

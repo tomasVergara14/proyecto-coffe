@@ -9,7 +9,7 @@ import { getFirestore } from '../../../services/firebaseService'
 const Category = () => {
     
     const [category, setCategory]=useState([])
-    const {categoryId} = useParams()
+    const {idCategory} = useParams()
     const url = "/category/"
     const dbQuery = getFirestore()
     
@@ -27,24 +27,34 @@ const Category = () => {
         //         }
         //     } ) 
         // }, 0)
+        
+
         dbQuery.collection('categories').get()
-        .then(response=>setCategory(response.docs.map(cat=>(
-            {...cat.data(), id:cat.id}   
-        ))))
-        console.log(category)
+        .then(response=>
+            {if(idCategory === undefined){
+                setCategory(response.docs.map(cat=>(
+                    {...cat.data(), id:cat.id} 
+                )))
+            }
+            // setCategory(response.docs.find(cat=>{}))
+            }
+            )
+            console.log(category)
+        console.log(idCategory)
 },[])
     
     return (
-        <div className="item">
-            {category.map((categories)=>{
-                const { categoryId, image, title, id}= categories
-                return (
-                    <div key={id} className="itemBox" > 
-                        <NavLink to={`${url}${categories.categoryId}`} className="category" key={id}> <img src={(image)} alt="Imagen de granos de cafe" className="img" /> <p className="product" >{title} </p>  </NavLink>
-                    </div>
-                )
-            } )}
-        </div>
+        <p></p>
+        // <div className="item">
+        //     {category.map((categories)=>{
+        //         const { categoryId, image, title, id}= categories
+        //         return (
+        //             <div key={id} className="itemBox" > 
+        //                 <NavLink to={`${url}${categories.categoryId}`} className="category" key={id}> <img src={image} alt="Imagen de granos de cafe" className="img" /> <p className="product" >{title} </p>  </NavLink>
+        //             </div>
+        //         )
+        //     } )}
+        // </div>
     )
 }
 

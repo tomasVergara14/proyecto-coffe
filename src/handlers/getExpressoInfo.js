@@ -1,19 +1,15 @@
 import { getFirestore } from '../services/firebaseService'
-import data from '../data/CoffeProducts'
 
-const getExpressoInfo = (async ()=>{
+const getExpressoInfo = (()=>{
     try{
         const dbQuery = getFirestore()
-        const colecction = dbQuery.collection('items')
-        const ExpressoColecction = await colecction.where('categoryId','==', '4').get()
-        const result = await ExpressoColecction.docs.map(itemFirebase=>(
-             {id: itemFirebase.id, key:itemFirebase.id ,...itemFirebase.data() })) 
-        return result
+        const colecction = dbQuery.collection('items').where('categoryId','==', '4')
+        return colecction
+        
     }catch(err){
         console.log(err)
     }
      
 })()
-
-
 export default getExpressoInfo
+
