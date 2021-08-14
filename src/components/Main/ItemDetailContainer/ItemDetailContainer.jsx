@@ -1,10 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
 import ItemDetail from '../ItemDetail/ItemDetail'
-import DefineItemDetail from '../../../handlers/DefineItemDetail'
 import { useProductContext } from '../../../handlers/Context/ProductContext'
 import { getFirestore } from '../../../services/firebaseService'
-import ItemCount from '../../itemCount/ItemCount'
 
 const ItemDetailContainer = () => {
     
@@ -14,23 +12,8 @@ const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true)
     const {itemId} = useParams()
 
-
     const dbQuery = getFirestore()
-    // useEffect(()=>{
-    //     setLoading(true)
-    //     setTimeout(()=>{
-    //         Promise.resolve(data)
-    //         .then(res =>{
-    //             if(itemId === undefined){
-    //                 setLoading(false)
-    //                 setItem( DefineItemDetail(itemId))    
-    //             }
-    //             else{
-    //                 setLoading(false)
-    //                 setItem(res.filter(it=> it.id === itemId))
-    //         } }) 
-    //     }, 1000)
-    // },[itemId])
+
     useEffect(() => {
         setLoading(true)
         dbQuery.collection('items').get()
@@ -46,7 +29,7 @@ const ItemDetailContainer = () => {
                 setItem({...filterItem[0].data(), id:filterItem[0].id})
             }
         })
-    }, [])
+    },[])
 
     useEffect(() => {
         setProduct(item)

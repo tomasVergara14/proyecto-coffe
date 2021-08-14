@@ -33,7 +33,7 @@ const Category = () => {
     return (
         <div className="item">
             {loading && <div className="spinner"></div>}
-            {category.length >1 ?
+            {category.length >=1 ?
             category.map((categories)=>{
                 const { image, title, id}= categories
                 return (

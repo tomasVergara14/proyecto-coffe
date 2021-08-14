@@ -1,6 +1,7 @@
 import React from 'react'
 import { useCartContext } from '../../handlers/Context/CartContext'
 import CartProduct from './CartProduct'
+import CartForm from './CartForm'
 
 const Cart = () => {
 
@@ -9,8 +10,6 @@ const Cart = () => {
     function Precio (PrecioElemento, CantidadElemento){
        return (Number(PrecioElemento) * Number(CantidadElemento))
     }
-
-    console.log(Cart)
 
     if(Cart.length !==0){
        return(
@@ -25,12 +24,12 @@ const Cart = () => {
                             <button className="ButtonRemove" onClick={()=>removeItem(element.item.id)}>Remover</button>
                             </div>
                         )
-                    })}
+                    })
+                }
                     </div>
                     <h3>Total: {TotalPrice} </h3>
                     <button className="ButtonClean" onClick={()=>ClearItems()} >Limpiar carrito</button>    
-                
-                
+                    <CartForm name="" tel="" email="" />
             </div>
         )
     }else{

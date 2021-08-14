@@ -16,7 +16,7 @@ const ItemList = () => {
     const products = DefineCategory(idCategory)
 
     useEffect(()=>{
-        const productsData = products.get()
+        products.get()
         .then(response=>{
             setLoading(true)
             if(itemId===undefined){

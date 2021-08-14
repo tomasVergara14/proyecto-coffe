@@ -1,0 +1,21 @@
+*{
+    margin: 0px;
+}
+.FormCart{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.ButtonSend{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 5%;
+    padding: 2%;
+    font-size: 1.1em;
+    color: aliceblue;
+    background-color: rgb(120, 153, 187);
+    border: 1px solid rgb(120, 153, 187);
+    border-radius: 3px;
+}
