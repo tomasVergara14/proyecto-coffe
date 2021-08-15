@@ -1,10 +1,10 @@
 import React from 'react'
 import './CartForm.css'
 
-const CartForm = ({name, tel, email}) => {
+const CartForm = ({name, tel, email,changes}) => {
     return (
         <div>
-            <form className="FormCart" action="">
+            <form className="FormCart" action="" onChange={changes}>
                 <input 
                 type="text"
                 placeholder="Name"
