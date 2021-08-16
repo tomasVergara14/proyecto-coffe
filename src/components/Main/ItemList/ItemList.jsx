@@ -44,7 +44,7 @@ const ItemList = () => {
                     return(                        
                         <NavLink key={id} className="containerItem" to={`/item/${id}`}>
                             <Item className="itemProduct" key={index}
-                            img={image} name={title} price={price} description={description} />
+                            img={image} name={title} price={price + ' $'} description={description} />
                         </NavLink>                        
                     )   
                     })}                            

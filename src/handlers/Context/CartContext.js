@@ -1,4 +1,5 @@
 import React, {createContext, useContext, useState} from 'react'
+import { getFirestore } from '../../services/firebaseService'
 
 export const CartContext = createContext()
 
@@ -7,10 +8,11 @@ export const useCartContext = ()=>useContext(CartContext)
 const CartContextProvider = ({children})=>{
 
     const [Cart, setCart]=useState([])
+    const [buyer, setBuyer]=useState({})
+    const newOrder = {buyer, item:Cart}
 
     function guardarItem (newItem){  
         const idx = Cart.find(item => newItem.item.id === item.item.id)
-        console.log(idx)
         if(idx === undefined){
             setCart([...Cart,newItem])
         }else{
@@ -37,15 +39,33 @@ const CartContextProvider = ({children})=>{
         return acc += (val.item.price * val.quantity)
     },0)
 
+    const handlerChange=(event)=>{
+        setBuyer({
+            ...buyer,
+            [event.target.name]: event.target.value
+        })
+    }
+    console.log(buyer)
+
+    const handlerSubmit=(event)=>{
+        event.preventDefault()
+        const dbQuery = getFirestore()
+        dbQuery.collection('order').add(newOrder)
+        .then(response=>console.log(response))
+    }
+    console.log(newOrder)
     return(
         <CartContext.Provider
         value={{ 
             Cart,
+            buyer,
             guardarItem,
             removeItem,
             ClearItems,
             TotalItems,
-            TotalPrice
+            TotalPrice,
+            handlerChange,
+            handlerSubmit
         }}>
             {children}
         </CartContext.Provider>

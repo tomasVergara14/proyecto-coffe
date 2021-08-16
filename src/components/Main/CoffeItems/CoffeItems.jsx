@@ -24,7 +24,7 @@ const CoffeItems = () => {
                     return(
                         <NavLink key={link.id} className="containerItem" to={`/item/${id}`}>
                             <Item className="itemProduct" 
-                            img={image} name={title} price={price} description={description} />
+                            img={image} name={title} price={price + ' $'} description={description} />
                         </NavLink>      
                     )   
                     })}
