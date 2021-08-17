@@ -1,5 +1,7 @@
 import React, {createContext, useContext, useState} from 'react'
 import { getFirestore } from '../../services/firebaseService'
+import firebase from 'firebase'
+import 'firebase/firestore'
 
 export const CartContext = createContext()
 
@@ -9,7 +11,8 @@ const CartContextProvider = ({children})=>{
 
     const [Cart, setCart]=useState([])
     const [buyer, setBuyer]=useState({})
-    const newOrder = {buyer, item:Cart}
+    const [idOrder,setIdOrder]=useState("")
+    const newOrder = {buyer, item:Cart, date: firebase.firestore.Timestamp.fromDate(new Date()) }
 
     function guardarItem (newItem){  
         const idx = Cart.find(item => newItem.item.id === item.item.id)
@@ -51,9 +54,9 @@ const CartContextProvider = ({children})=>{
         event.preventDefault()
         const dbQuery = getFirestore()
         dbQuery.collection('order').add(newOrder)
-        .then(response=>console.log(response))
+        .then(response=>setIdOrder(response.id))
     }
-    console.log(newOrder)
+    console.log(idOrder)
     return(
         <CartContext.Provider
         value={{ 
@@ -65,7 +68,8 @@ const CartContextProvider = ({children})=>{
             TotalItems,
             TotalPrice,
             handlerChange,
-            handlerSubmit
+            handlerSubmit,
+            idOrder
         }}>
             {children}
         </CartContext.Provider>

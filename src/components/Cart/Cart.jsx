@@ -5,7 +5,7 @@ import CartForm from './CartForm'
 
 const Cart = () => {
 
-    const {Cart, removeItem, ClearItems, TotalPrice, handlerChange, handlerSubmit, buyer} = useCartContext()
+    const {Cart, removeItem, ClearItems, TotalPrice, handlerChange, handlerSubmit, buyer, idOrder} = useCartContext()
 
     function Precio (PrecioElemento, CantidadElemento){
        return (Number(PrecioElemento) * Number(CantidadElemento))
@@ -29,7 +29,12 @@ const Cart = () => {
                     </div>
                     <h3>Total: {TotalPrice} </h3>
                     <button className="ButtonClean" onClick={()=>ClearItems()} >Limpiar carrito</button>    
-                    <CartForm changes={handlerChange} submit={handlerSubmit} name={buyer.name} tel={buyer.tel} email={buyer.email} />
+                    
+                    {idOrder?<p>Tu codigo de compra {idOrder} </p>:
+                    <> 
+                    <CartForm changes={handlerChange} submit={handlerSubmit} name={buyer.name} tel={buyer.tel} email={buyer.email} /> 
+                    <p>Pide tu producto</p>
+                    </> }
             </div>
         )
     }else{
