@@ -2,10 +2,10 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import './CartForm.css'
 
-const CartForm = ({name, tel, email,changes, submit}) => {
+const CartForm = ({name, tel, email,changes, submit }) => {
     return (
         <div>
-            <form className="FormCart" action="/" onChange={changes} onSubmit={submit}>
+            <form className="FormCart" action="/" onChange={changes} onSubmit={submit} >
                 <input 
                 type="text"
                 placeholder="Name"
@@ -24,7 +24,7 @@ const CartForm = ({name, tel, email,changes, submit}) => {
                 name="email"
                 defaultValue={email} 
                 />
-                <button className="ButtonSend"> Send </button>  
+                <button className="ButtonSend" > Send </button>  
             </form>
         </div>
     )

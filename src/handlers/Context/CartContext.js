@@ -9,9 +9,11 @@ export const useCartContext = ()=>useContext(CartContext)
 
 const CartContextProvider = ({children})=>{
 
+    const [clicksNum, setClicksNum]=useState(0)
     const [Cart, setCart]=useState([])
     const [buyer, setBuyer]=useState({})
     const [idOrder,setIdOrder]=useState("")
+    
     const newOrder = {buyer, item:Cart, date: firebase.firestore.Timestamp.fromDate(new Date()) }
 
     function guardarItem (newItem){  
@@ -37,11 +39,22 @@ const CartContextProvider = ({children})=>{
     const TotalItems = Cart.reduce((acc, item)=>{
         return acc += item.quantity
     },0)
+    
+    function Precio (PrecioElemento, CantidadElemento){
+        return (Number(PrecioElemento) * Number(CantidadElemento))
+     }
 
     const TotalPrice = Cart.reduce((acc, val)=>{
         return acc += (val.item.price * val.quantity)
     },0)
 
+    // const countClicks = ()=>{
+    //     if(Cart.length !== 0 ){
+            
+    //     }
+    // }
+    console.log(clicksNum)
+    console.log(idOrder)
     const handlerChange=(event)=>{
         setBuyer({
             ...buyer,
@@ -55,9 +68,9 @@ const CartContextProvider = ({children})=>{
         const dbQuery = getFirestore()
         dbQuery.collection('order').add(newOrder)
         .then(response=>setIdOrder(response.id))
-        {<p>Tu orden de compra {idOrder} </p>}
+        setClicksNum(clicksNum +1)
     }
-    console.log(idOrder)
+
     return(
         <CartContext.Provider
         value={{ 
@@ -67,10 +80,12 @@ const CartContextProvider = ({children})=>{
             removeItem,
             ClearItems,
             TotalItems,
+            Precio,
             TotalPrice,
             handlerChange,
             handlerSubmit,
-            idOrder
+            idOrder,
+            clicksNum
         }}>
             {children}
         </CartContext.Provider>

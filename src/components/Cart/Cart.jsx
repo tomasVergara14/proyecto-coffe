@@ -2,14 +2,12 @@ import React from 'react'
 import { useCartContext } from '../../handlers/Context/CartContext'
 import CartProduct from './CartProduct'
 import CartForm from './CartForm'
+import ShowOrder from '../ShowOrder/ShowOrder'
 
 const Cart = () => {
 
-    const {Cart, removeItem, ClearItems, TotalPrice, handlerChange, handlerSubmit, buyer, idOrder} = useCartContext()
+    const {Cart, removeItem, ClearItems, TotalPrice, Precio, clicksNum , handlerChange, handlerSubmit, buyer, idOrder} = useCartContext()
 
-    function Precio (PrecioElemento, CantidadElemento){
-       return (Number(PrecioElemento) * Number(CantidadElemento))
-    }
 
     if(Cart.length !==0){
        return(
@@ -29,8 +27,11 @@ const Cart = () => {
                     </div>
                     <h3>Total: {TotalPrice} </h3>
                     <button className="ButtonClean" onClick={()=>ClearItems()} >Limpiar carrito</button>    
-                    <CartForm changes={handlerChange} submit={handlerSubmit} name={buyer.name} tel={buyer.tel} email={buyer.email} /> 
-                    <p>Tu orden de compra:  {idOrder}</p>
+                     {clicksNum ===1? <ShowOrder num={idOrder} /> : <CartForm changes={handlerChange} submit={handlerSubmit}  name={buyer.name} tel={buyer.tel} email={buyer.email} /> }
+                     
+                     
+                    
+                    
                     
             </div>
         )

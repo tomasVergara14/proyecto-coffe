@@ -32,11 +32,9 @@ const ItemCount = ({initial,stockItem}) => {
             setShop("Terminar Compra")
             setQuantity(onAdd)
             guardarItem({item:product, quantity:onAdd})
-           
         }
      }
      console.log(quantity)
-    //  console.log(guardarItem())
 
     return (
         
