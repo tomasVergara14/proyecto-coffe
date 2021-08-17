@@ -29,12 +29,9 @@ const Cart = () => {
                     </div>
                     <h3>Total: {TotalPrice} </h3>
                     <button className="ButtonClean" onClick={()=>ClearItems()} >Limpiar carrito</button>    
-                    
-                    {idOrder?<p>Tu codigo de compra {idOrder} </p>:
-                    <> 
                     <CartForm changes={handlerChange} submit={handlerSubmit} name={buyer.name} tel={buyer.tel} email={buyer.email} /> 
-                    <p>Pide tu producto</p>
-                    </> }
+                    <p>Tu orden de compra:  {idOrder}</p>
+                    
             </div>
         )
     }else{

@@ -55,6 +55,7 @@ const CartContextProvider = ({children})=>{
         const dbQuery = getFirestore()
         dbQuery.collection('order').add(newOrder)
         .then(response=>setIdOrder(response.id))
+        {<p>Tu orden de compra {idOrder} </p>}
     }
     console.log(idOrder)
     return(
