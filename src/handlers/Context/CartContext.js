@@ -48,13 +48,6 @@ const CartContextProvider = ({children})=>{
         return acc += (val.item.price * val.quantity)
     },0)
 
-    // const countClicks = ()=>{
-    //     if(Cart.length !== 0 ){
-            
-    //     }
-    // }
-    console.log(clicksNum)
-    console.log(idOrder)
     const handlerChange=(event)=>{
         setBuyer({
             ...buyer,
