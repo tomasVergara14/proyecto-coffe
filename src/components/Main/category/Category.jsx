@@ -33,7 +33,7 @@ const Category = () => {
     return (
         <div className="item">
             {loading && <div className="spinner"></div>}
-            {category.length >=1 ?
+            {category.length >1 ?
             category.map((categories)=>{
                 const { image, title, id}= categories
                 return (
@@ -42,8 +42,12 @@ const Category = () => {
                     </div>
                 )
             } )
-            :   <div key={category.id} className="itemBox" > 
-                    <NavLink to={`${url}${category.categoryId}`} className="category" key={category.id}> <img src={category.image} alt="" className="img" /> <p className="product" >{category.title} </p>  </NavLink>
+            :   <div key={category.id} className="itemBoxTitle" >
+                    <div>
+                        <img className="banner" src={category.banner} alt="" />
+                    </div> 
+                    <h3>{category.title} </h3>
+                    
                 </div>
             }
         </div>

@@ -57,13 +57,13 @@ h3{
     .container{
         width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
     }
     .containerItem{
         margin: 0px;
         display: flex;
         flex-wrap: wrap;
-        width: 33%;
+        width: 20%;
     }
     .itemProduct{
         width: 30%;
