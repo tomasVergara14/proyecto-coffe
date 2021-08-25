@@ -36,9 +36,7 @@ const ItemList = () => {
 
     return (
         <div className="containerItemBox" >
-            <h3>Productos</h3>
             <div className="container">
-                {loading && <div className="spinner"></div>}
                 {item.map((link, index)=>{
                     const {id, title, price , image, description}= link
                     return(                        

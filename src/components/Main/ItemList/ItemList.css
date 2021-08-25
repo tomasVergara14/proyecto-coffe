@@ -26,7 +26,9 @@ h3{
     width: 80px;
     height: 80px;
     position: relative;
-    top: 100px;
+    justify-content: center;
+    left: 120px;
+
   }
 .spinner:after {
     content: " ";
@@ -68,4 +70,15 @@ h3{
     .itemProduct{
         width: 30%;
     }
+    
+.spinner{
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    justify-content: center;
+    left: 160px;
+    top: 200px;
+
+  }
 }

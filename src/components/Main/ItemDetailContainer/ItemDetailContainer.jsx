@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useProductContext } from '../../../handlers/Context/ProductContext'
 import { getFirestore } from '../../../services/firebaseService'
+import './ItemDetailContainer.css'
 
 const ItemDetailContainer = () => {
     
@@ -37,7 +38,7 @@ const ItemDetailContainer = () => {
     
     return (
         <div>
-            {loading && <div className="spinner"></div>}
+            {loading && <div className="spinner2"></div>}
             <div key={item.id}>
                     <ItemDetail  name={item.title} gr={item.title} place={item.title} price={item.price} origin={item.title} height={item.title} description={item.description} img={item.image}/>
             </div>
