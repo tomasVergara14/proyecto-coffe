@@ -5,11 +5,11 @@ import './ItemDetail.css'
 const ItemDetail = ({name,price,description,img}) => {
     return (
         <div className="DetailBox" >
-            <img className="ImgBox" src={img} alt="fotito" />
+            <img className="ImgBox" src={img} alt="" />
             <div className="DetailText" >
-                <div className="DetailHeadLine" >{name}</div>
-                <p>{price} $</p>
-                <div>{description} </div>
+                <h4 className="DetailHeadLine" >{name}</h4>
+                <p><h4> Price: </h4>{price} $</p>
+                <div><h4>Description</h4> {description} </div>
 
                 <ItemCount initial= "1" stockItem="5"/>
             </div>            

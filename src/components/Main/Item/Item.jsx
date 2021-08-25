@@ -10,9 +10,9 @@ const Item = (props) => {
             <div className="itemDetail">         
                 <img className="ItemImg" src={img} alt="" />
                 <div className="ItemText">
-                    <p>Nombre: {name} </p>
-                    <p>Precio: {price} </p>
-                    <p>Description: {description} </p>
+                    <p><h5>Nombre: </h5>  {name} </p>
+                    <p><h5>Precio: </h5>  {price} </p>
+                    <p><h5>Description:</h5>  {description} </p>
                 </div>
             </div>    
     )

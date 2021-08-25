@@ -3,6 +3,7 @@ import { useCartContext } from '../../handlers/Context/CartContext'
 import CartProduct from './CartProduct'
 import CartForm from './CartForm'
 import ShowOrder from '../ShowOrder/ShowOrder'
+import './Cart.css'
 
 const Cart = () => {
 

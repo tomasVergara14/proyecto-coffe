@@ -23,8 +23,8 @@
     height: 4vh;
     font-size: 1.1em;
     color: aliceblue;
-    background-color: rgb(120, 153, 187);
-    border: 1px solid rgb(120, 153, 187);
+    background-color: rgb(41, 44, 47);
+    border: 1px solid rgb(41, 44, 47);
     border-radius: 3px;
 }
 .Button:hover{
@@ -32,14 +32,14 @@
     color: rgb(41, 44, 47);
 }
 .countButtons p{
-    color: rgb(230, 236, 241);
+    color: rgb(41, 44, 47);
 }
 .Add{
     margin: 2%;
     padding: 2px;
     color: aliceblue;
-    background-color: rgb(120, 153, 187);
-    border: 1px solid rgb(120, 153, 187);
+    background-color: rgb(41, 44, 47);
+    border: 1px solid rgb(41, 44, 47);
     border-radius: 3px;
 }
 .Add:hover{

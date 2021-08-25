@@ -3,11 +3,14 @@
     padding: 0px;
 }
 .itemDetail{
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0px;
+    padding: 2%;
+    border: 0.5px solid rgb(228, 227, 227);
 }
 .ItemImg{
         width: 80%;
@@ -18,10 +21,7 @@
     width: 80%;
     flex-direction: column;
     justify-content: center;
-    position: relative;
-    bottom: 40px;
-    color:rgb(230, 236, 241);
-    background-color: rgba(0,0,0,0.5);
+    color:rgb(3, 3, 3);
 }
 
 
@@ -38,18 +38,18 @@
     }
     .itemDetail:hover{
         transform: scale(1.05);
+        box-shadow: 0px 0px 3px gray;
     }
     .ItemImg{
         width: 100%;
         height: 30vh;
     }
     .ItemText{
-        width: 100%;
         display: flex;
+        width: 80%;
         flex-direction: column;
         justify-content: center;
-        position: relative;
-        bottom: 40px;
+        color:rgb(3, 3, 3);
     }
     
 }

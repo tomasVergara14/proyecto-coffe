@@ -23,12 +23,14 @@
     margin-top: 10%;
 }
 .CartDetail{
-    display: flex;
     width: 100%;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0px;
+    padding: 2%;
+    border: 0.5px solid rgb(228, 227, 227);
 }
 .CartImg{
         width: 100%;
@@ -36,13 +38,10 @@
 }
 .CartText{
     display: flex;
-    width: 100%;
+    width: 80%;
     flex-direction: column;
     justify-content: center;
-    position: relative;
-    bottom: 55px;
-    color:rgb(230, 236, 241);
-    background-color: rgba(0,0,0,0.5);
+    color:rgb(3, 3, 3);
 }
 .ButtonRemove{
     
@@ -53,9 +52,13 @@
     padding: 2%;
     font-size: 1.1em;
     color: aliceblue;
-    background-color: rgb(120, 153, 187);
-    border: 1px solid rgb(120, 153, 187);
+    background-color: rgb(41, 44, 47);
+    border: 1px solid rgb(41, 44, 47);
     border-radius: 3px;
+}
+.ButtonRemove:hover{
+    background-color: aliceblue;
+    color: rgb(41, 44, 47);
 }
 .ButtonClean{
     width: 100%;
@@ -66,9 +69,13 @@
     padding: 2%;
     font-size: 1.1em;
     color: aliceblue;
-    background-color: rgb(120, 153, 187);
-    border: 1px solid rgb(120, 153, 187);
+    background-color: rgb(41, 44, 47);
+    border: 1px solid rgb(41, 44, 47);
     border-radius: 3px;
+}
+.ButtonClean:hover{
+    background-color: aliceblue;
+    color: rgb(41, 44, 47);
 }
 
 @media (min-width: 600px){
@@ -91,23 +98,13 @@
         display: flex;
         margin: 1%;
         padding: 2%;
-        transition: transform 500ms ease;
     }
     .CartDetail:hover{
-        transform: scale(1.05);
+        box-shadow: 0 0 3px #515151;
     }
     .CartImg{
         width: 100%;
         height: 30vh;
-    }
-    .CartText{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        position: relative;
-        bottom: 43px;
-        font-size: 0.8em;
     }
     .ButtonClean{
         width: 100%;

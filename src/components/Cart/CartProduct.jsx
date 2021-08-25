@@ -10,9 +10,9 @@ const CartProduct = (props) => {
             <div className="CartDetail">         
                 <img className="CartImg" src={img} alt="Mostrar Cafe adquirido en el carrito" />
                 <div className="CartText">
-                    <p>Nombre: {name} </p>
-                    <p>Precio total: {price} </p>
-                    <p>Cantidad: {CountItem} </p>                    
+                    <p><h5>Nombre:</h5>  {name} </p>
+                    <p><h5>Precio total:</h5>  {price} </p>
+                    <p><h5>Cantidad:</h5>  {CountItem} </p>                    
                 </div>                            
             </div>                
     )

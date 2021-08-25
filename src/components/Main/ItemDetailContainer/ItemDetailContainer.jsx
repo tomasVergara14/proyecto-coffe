@@ -34,7 +34,6 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         setProduct(item)
     }, [item])
-    console.log(product)
     
     return (
         <div>

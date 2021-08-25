@@ -3,9 +3,14 @@
     padding: 0px;
 }
 .DetailBox{
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 2%;
+    border: 0.5px solid rgb(228, 227, 227);
 }
 .ImgBox{
     width: 60vh;
@@ -13,13 +18,16 @@
 }
 .DetailText{
     display: flex;
-    width: 100%;
+    width: 80%;
     flex-direction: column;
     justify-content: center;
-    color:rgb(230, 236, 241);
-    background-color: rgba(0,0,0,0.5);
+    color:rgb(3, 3, 3);
 }
-
+.DetailHeadLine{
+    display: block;
+    margin: 2%;
+    border-bottom: 1px solid aliceblue;
+}
 
 @media (min-width: 600px){
     .DetailBox{
@@ -28,10 +36,6 @@
         justify-content: center;
         flex-direction: row;
         margin: 0px;
-        transition: transform 500ms ease;
-    }
-    .DetailBox:hover{
-        transform: scale(0.95);
     }
     .ImgBox{
         width: 50vh;

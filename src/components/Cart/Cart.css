@@ -1,0 +1,7 @@
+.EachItemContainer{
+    display: flex;
+    justify-content: space-around;
+}
+.CartItemConatiner{
+    margin: 6%;
+}
