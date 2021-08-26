@@ -7,7 +7,7 @@ import './ItemDetailContainer.css'
 
 const ItemDetailContainer = () => {
     
-    const {product, setProduct} = useProductContext()
+    const {setProduct} = useProductContext()
     
     const [item, setItem]=useState([])
     const [loading, setLoading] = useState(true)

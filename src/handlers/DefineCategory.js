@@ -6,9 +6,6 @@ import getExpressoInfo from './getExpressoInfo'
 
 const DefineCategory = (categoriesId)=>{
     
-    //Fijarse qeu no funciona el hook de useParams
-    // const {id} = useParams()
-
         if(categoriesId==="1"){
             return(getCoffeInfo)
         }
