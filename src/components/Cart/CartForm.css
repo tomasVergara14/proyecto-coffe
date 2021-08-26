@@ -2,9 +2,14 @@
     margin: 0px;
 }
 .FormCart{
+    width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-between;
+}
+.InputForm{
+    margin: 2%;
 }
 .ButtonSend{
     width: 100%;
@@ -18,4 +23,9 @@
     background-color: rgb(41, 44, 47);
     border: 1px solid rgb(41, 44, 47);
     border-radius: 3px;
+}
+
+.ButtonSend:hover{
+    background-color: aliceblue;
+    color: rgb(41, 44, 47);
 }

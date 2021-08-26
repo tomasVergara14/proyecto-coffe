@@ -32,7 +32,6 @@ const ItemList = () => {
             }
         })    
     },[itemId])
-    console.log(item)
 
     return (
         <div className="containerItemBox" >

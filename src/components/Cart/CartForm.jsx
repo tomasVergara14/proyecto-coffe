@@ -7,18 +7,21 @@ const CartForm = ({name, tel, email,changes, submit }) => {
             <form className="FormCart" action="/" onChange={changes} onSubmit={submit} >
                 <input 
                 type="text"
+                className="InputForm"
                 placeholder="Name"
                 name="name"
                 defaultValue={name}
                 />
                 <input 
                 type="text"
+                className="InputForm"
                 placeholder="Telephone"
                 name="tel"
                 defaultValue={tel} 
                 />
                 <input 
                 type="email"
+                className="InputForm"
                 placeholder="Email"
                 name="email"
                 defaultValue={email} 

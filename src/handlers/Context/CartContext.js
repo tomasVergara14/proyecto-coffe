@@ -54,7 +54,6 @@ const CartContextProvider = ({children})=>{
             [event.target.name]: event.target.value
         })
     }
-    console.log(buyer)
 
     const handlerSubmit=(event)=>{
         event.preventDefault()

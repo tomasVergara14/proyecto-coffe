@@ -34,7 +34,6 @@ const ItemCount = ({initial,stockItem}) => {
             guardarItem({item:product, quantity:onAdd})
         }
      }
-     console.log(quantity)
 
     return (
         

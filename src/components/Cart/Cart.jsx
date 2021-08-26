@@ -9,7 +9,7 @@ const Cart = () => {
 
     const {Cart, removeItem, ClearItems, TotalPrice, Precio, clicksNum , handlerChange, handlerSubmit, buyer, idOrder} = useCartContext()
 
-
+    console.log(buyer.name, buyer.tel, buyer.email)
     if(Cart.length !==0){
        return(
            <div className="ContainerCart">
@@ -28,12 +28,7 @@ const Cart = () => {
                     </div>
                     <h3>Total: {TotalPrice} </h3>
                     <button className="ButtonClean" onClick={()=>ClearItems()} >Limpiar carrito</button>    
-                     {clicksNum ===1? <ShowOrder num={idOrder} /> : <CartForm changes={handlerChange} submit={handlerSubmit}  name={buyer.name} tel={buyer.tel} email={buyer.email} /> }
-                     
-                     
-                    
-                    
-                    
+                     {clicksNum ===1 ? <ShowOrder num={idOrder} /> : <CartForm changes={handlerChange} submit={handlerSubmit}  name={buyer.name} tel={buyer.tel} email={buyer.email} /> }
             </div>
         )
     }else{
