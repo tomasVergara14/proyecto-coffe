@@ -5,8 +5,8 @@ import  './Options.css'
 function Options() {
     return (
         <div className="Navbar">
-            <NavLink to="/" className="navOption">Nosotros</NavLink>
-            <NavLink to="/" className="navOption">Encargos</NavLink>
+            <NavLink to="/us" className="navOption">Nosotros</NavLink>
+            <NavLink to="/contact" className="navOption">Contactanos</NavLink>
         </div>
     )
 }

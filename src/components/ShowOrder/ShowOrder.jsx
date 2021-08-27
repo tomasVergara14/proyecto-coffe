@@ -11,8 +11,8 @@ const ShowOrder = ({numOrder}) => {
 const {ClearItems}= useCartContext()
     const showAlert=  ()=>{
             swal({
-                title:"Ýour order N°",
-                text:` Your order is ${numOrder}`,
+                title:"Codigo de compra",
+                text:` ${numOrder}`,
                 icon:'success',
             })
             ClearItems()

@@ -16,7 +16,6 @@ const CartContextProvider = ({children})=>{
     const [idOrder,setIdOrder]=useState("")
     const [clicksNum, setClicksNum]=useState(0)
     var errors=[]
-    let emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
     
     const newOrder = {buyer, item:Cart, date: firebase.firestore.Timestamp.fromDate(new Date()) }
 
@@ -71,12 +70,6 @@ const CartContextProvider = ({children})=>{
             console.log(errors)
         }
     }
-    const validatesMail = ()=>{
-        if(!emailRegex.test(buyer.email)){
-            errors.push({Message:"Ingrese un email con formato valido."})
-            console.log(errors)
-        }
-    }
     const validatesRepeat = ()=>{
         if(buyer.emailRepeat !== buyer.email){
             errors.push({Message:"El mail no coincide"})
@@ -88,7 +81,6 @@ const CartContextProvider = ({children})=>{
         event.preventDefault()
         validatesName()
         validatesTel()
-        validatesMail()
         validatesRepeat()
         if(errors.length===0){
             const dbQuery = getFirestore()

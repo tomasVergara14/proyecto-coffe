@@ -1,0 +1,29 @@
+.Contact{
+    display: flex;
+    flex-wrap: wrap;
+}
+.ContactTitle{
+    width: 100%;
+    padding: 5%;
+}
+.ContactContainerItems{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.ContactItem{
+    margin: 5%;
+    color: black;
+}
+@media(min-width:600px){
+    
+    .ContactContainerItems{
+        flex-direction: row;
+    }
+    .ContactItem{
+        position: relative;
+        top: 150px;
+    }
+}
