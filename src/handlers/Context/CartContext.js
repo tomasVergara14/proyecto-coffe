@@ -2,6 +2,7 @@ import React, {createContext, useContext, useState} from 'react'
 import { getFirestore } from '../../services/firebaseService'
 import firebase from 'firebase'
 import 'firebase/firestore'
+import swal from 'sweetalert'
 
 export const CartContext = createContext()
 
@@ -9,10 +10,13 @@ export const useCartContext = ()=>useContext(CartContext)
 
 const CartContextProvider = ({children})=>{
 
-    const [clicksNum, setClicksNum]=useState(0)
+
     const [Cart, setCart]=useState([])
     const [buyer, setBuyer]=useState({})
     const [idOrder,setIdOrder]=useState("")
+    const [clicksNum, setClicksNum]=useState(0)
+    var errors=[]
+    let emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
     
     const newOrder = {buyer, item:Cart, date: firebase.firestore.Timestamp.fromDate(new Date()) }
 
@@ -55,14 +59,49 @@ const CartContextProvider = ({children})=>{
         })
     }
 
+    const validatesName = ()=>{
+        if(buyer.name.length<3){
+            errors.push({Message:"El nombre debe tener mas de 3 caracteres"})
+            console.log(errors[0].Message)
+        }
+    }
+    const validatesTel = ()=>{
+        if(isNaN(buyer.tel) && buyer.tel.length <7 ){
+            errors.push({Message:"El campo de telefono solo acepta numeros"})
+            console.log(errors)
+        }
+    }
+    const validatesMail = ()=>{
+        if(!emailRegex.test(buyer.email)){
+            errors.push({Message:"Ingrese un email con formato valido."})
+            console.log(errors)
+        }
+    }
+    const validatesRepeat = ()=>{
+        if(buyer.emailRepeat !== buyer.email){
+            errors.push({Message:"El mail no coincide"})
+            console.log(errors)
+        }
+    }
+
     const handlerSubmit=(event)=>{
         event.preventDefault()
-        const dbQuery = getFirestore()
-        dbQuery.collection('order').add(newOrder)
-        .then(response=>setIdOrder(response.id))
-        setClicksNum(clicksNum +1)
+        validatesName()
+        validatesTel()
+        validatesMail()
+        validatesRepeat()
+        if(errors.length===0){
+            const dbQuery = getFirestore()
+            dbQuery.collection('order').add(newOrder)
+            .then(response=>setIdOrder(response.id))
+            setClicksNum(clicksNum +1)
+        }else{
+            swal("Revisa", ` ${errors[0].Message}`, "warning")
+        }
+        
     }
     
+
     const CleanOrder=()=>{
         if(Cart.length===0){
             setClicksNum(0)

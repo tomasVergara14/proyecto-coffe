@@ -18,3 +18,9 @@ border-radius: 3px;
 background-color: aliceblue;
 color: rgb(41, 44, 47);
 }
+
+@media (min-width:600px) {
+    .ButtonOk{
+        width: 50%;
+    }
+}

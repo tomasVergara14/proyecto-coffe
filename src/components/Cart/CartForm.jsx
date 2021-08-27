@@ -1,7 +1,7 @@
 import React from 'react'
 import './CartForm.css'
 
-const CartForm = ({name, tel, email,changes, submit }) => {
+const CartForm = ({name, tel, email,emailRepeat,changes, submit }) => {
 
 
     return (
@@ -28,7 +28,14 @@ const CartForm = ({name, tel, email,changes, submit }) => {
                 name="email"
                 defaultValue={email} 
                 />
-                <button className="ButtonSend" > Send </button>  
+                <input 
+                type="email"
+                className="InputForm"
+                placeholder="Repeat Email"
+                name="emailRepeat"
+                defaultValue={emailRepeat} 
+                />
+                <button className="ButtonSend" > Enviar </button>  
             </form>
         </div>
     )
