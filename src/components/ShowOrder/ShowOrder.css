@@ -1,0 +1,20 @@
+.OkContainer{
+    width: 100%;
+}
+.ButtonOk{
+width: 100%;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+margin: 5%;
+padding: 2%;
+font-size: 1.1em;
+color: aliceblue;
+background-color: rgb(41, 44, 47);
+border: 1px solid rgb(41, 44, 47);
+border-radius: 3px;
+}
+.ButtonOk:hover{
+background-color: aliceblue;
+color: rgb(41, 44, 47);
+}
