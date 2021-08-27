@@ -7,7 +7,7 @@ import './Cart.css'
 
 const Cart = () => {
 
-    const {Cart, removeItem, ClearItems, TotalPrice, Precio, clicksNum , handlerChange, handlerSubmit, buyer, idOrder} = useCartContext()
+    const {Cart, removeItem, ClearItems, TotalPrice, Precio, clicksNum , handlerChange, handlerSubmit, buyer, idOrder, CleanOrder} = useCartContext()
 
     console.log(buyer.name, buyer.tel, buyer.email)
     
@@ -36,7 +36,12 @@ const Cart = () => {
             
         )
     }else{
-        return(<h3 className="TitleCart">Sin productos</h3>)        
+        return(
+            <>
+            {CleanOrder()}
+            <h3 className="TitleCart">Sin productos</h3>
+            </>
+        )        
     }
 }
 

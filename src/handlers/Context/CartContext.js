@@ -62,6 +62,14 @@ const CartContextProvider = ({children})=>{
         .then(response=>setIdOrder(response.id))
         setClicksNum(clicksNum +1)
     }
+    
+    const CleanOrder=()=>{
+        if(Cart.length===0){
+            setClicksNum(0)
+            setBuyer("")
+            setIdOrder("")
+        }
+    }
 
     return(
         <CartContext.Provider
@@ -77,7 +85,8 @@ const CartContextProvider = ({children})=>{
             handlerChange,
             handlerSubmit,
             idOrder,
-            clicksNum
+            clicksNum,
+            CleanOrder
         }}>
             {children}
         </CartContext.Provider>

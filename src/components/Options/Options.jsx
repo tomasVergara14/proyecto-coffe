@@ -6,9 +6,7 @@ function Options() {
     return (
         <div className="Navbar">
             <NavLink to="/" className="navOption">Nosotros</NavLink>
-            <NavLink to="/" className="navOption">Origenes</NavLink>
-            <NavLink to="/" className="navOption">Equipamiento</NavLink>
-            <NavLink to="/" className="navOption">Tienda</NavLink>
+            <NavLink to="/" className="navOption">Encargos</NavLink>
         </div>
     )
 }
