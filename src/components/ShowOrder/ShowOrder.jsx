@@ -1,10 +1,19 @@
 import React from 'react'
+import swal from 'sweetalert'
 
-const showOrder = ({num}) => {
+const showOrder = ({numOrder}) => {
+
+    const showAlert=  ()=>{
+         swal({
+            title:"Ýour order N°",
+            text:` Your order is ${numOrder}`,
+            icon:'success'
+        })
+    }
+
     return (
         <div>
-            <h3>Your order id:</h3>
-            <h4> {num} </h4>
+            <button onClick={showAlert}>Listo</button>
         </div>
     )
 }

@@ -2,6 +2,8 @@ import React from 'react'
 import './CartForm.css'
 
 const CartForm = ({name, tel, email,changes, submit }) => {
+
+
     return (
         <div>
             <form className="FormCart" action="/" onChange={changes} onSubmit={submit} >
