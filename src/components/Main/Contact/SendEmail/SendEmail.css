@@ -1,18 +1,53 @@
 .contact-form{
     display: flex;
+    height: 60vh;
     flex-direction: column;
-    background-color: gray;
     padding: 8%;
     align-items: center;
 }
-.contact-form input{
+.ContactInput{
     width: 50%;
     margin-bottom: 2%;
+    border: 1px solid gray;
+    border-radius: 5%;
 }
-.contact-form label{
+.ContactLabel{
+    width: 50%;
+    margin-top: 2%;
+}
+.ContactTextArea{
     width: 50%;
 }
-.contact-form textarea{
+.ContactSendButton{
     width: 50%;
-    margin: 2% 0%;
+    font-size: 1em;
+    color: aliceblue;
+    position: relative;
+    bottom: -15px;
+    background-color: rgb(41, 44, 47);
+    border: 1px solid rgb(41, 44, 47);
+    border-radius: 3px;
+    }
+    .ContactSendButton:hover{
+        background-color: aliceblue;
+        color: rgb(41, 44, 47);
+    }
+@media(min-width:600px){
+    .ContactSendButton{
+        width: 50%;
+        font-size: 1em;
+        color: aliceblue;
+        position: relative;
+        bottom: -25px;
+        background-color: rgb(41, 44, 47);
+        border: 1px solid rgb(41, 44, 47);
+        border-radius: 3px;
+    }
+    .ContactSendButton:hover{
+        background-color: aliceblue;
+        color: rgb(41, 44, 47);
+    }
+    .ContactTextArea{
+        width: 50%;
+    }
 }
