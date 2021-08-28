@@ -8,7 +8,7 @@ import './ShowOrder.css'
 const ShowOrder = ({numOrder}) => {
 
     
-const {ClearItems}= useCartContext()
+const {ClearItems, idOrder}= useCartContext()
     const showAlert=  ()=>{
             swal({
                 title:"Codigo de compra",
@@ -20,7 +20,10 @@ const {ClearItems}= useCartContext()
     console.log(numOrder.length)
     if(numOrder.length !== 0){
         return (
+            <>
+            <h3>Orden de compra: {idOrder} </h3>
             <button className="ButtonOk" onClick={showAlert}>Listo</button>   
+            </>
         )
     }else{
         return(
