@@ -5,20 +5,28 @@
 
 ### Cuenta con:
     - Una barra de navegacion que incluye:
+    
         > Logo
         > Carrito con un indicador de cuantos productos posee
         > Una seccion de "Nosotros" donde se carga un componente 
         > Una seccion de "Contactanos" donde se incluyen links de contacto a LinkedIn, GitHub y la posibilidad de enviar un mail funcional a mi casilla de correo
+    
     - Vista a pantalla principal que incluye: 
+    
         > Listado de las categorias
         > Listado de los principales productos
+    
     - Vista de la categoria seleccionada con sus productos
+    
     - Vista del Detalle de producto seleccionado que incluye:
+    
         > Nombre, precio y descripcion
         > Botones para modificar la cantidad de productos a agregar
         > Boton para agregar productos al carrito
         > Boton para finalizar compra
+    
     - Vista del carrito que incluye:
+    
         > Listado de los productos con el detalle de los mismos
         > Boton para remover cada producto
         > Boton para borrar todos los productos del carrito
