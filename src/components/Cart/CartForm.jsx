@@ -35,7 +35,7 @@ const CartForm = ({name, tel, email,emailRepeat,changes, submit }) => {
                 name="emailRepeat"
                 defaultValue={emailRepeat} 
                 />
-                <button className="ButtonSend" > Enviar </button>  
+                <button className="ButtonSend" >Realizar compra</button>  
             </form>
         </div>
     )
