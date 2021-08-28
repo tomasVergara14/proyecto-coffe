@@ -10,7 +10,6 @@ export const useCartContext = ()=>useContext(CartContext)
 
 const CartContextProvider = ({children})=>{
 
-
     const [Cart, setCart]=useState([])
     const [buyer, setBuyer]=useState({})
     const [idOrder,setIdOrder]=useState("")
@@ -89,10 +88,8 @@ const CartContextProvider = ({children})=>{
             setClicksNum(clicksNum +1)
         }else{
             swal("Revisa", ` ${errors[0].Message}`, "warning")
-        }
-        
+        }   
     }
-    
 
     const CleanOrder=()=>{
         if(Cart.length===0){

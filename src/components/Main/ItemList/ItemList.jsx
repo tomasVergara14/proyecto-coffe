@@ -40,6 +40,7 @@ const ItemList = () => {
                     const {id, title, price , image, description}= link
                     return(                        
                         <NavLink key={id} className="containerItem" to={`/item/${id}`}>
+                            {loading && <div className="spinner2"></div>}
                             <Item className="itemProduct" key={index}
                             img={image} name={title} price={price + ' $'} description={description} />
                         </NavLink>                        

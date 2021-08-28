@@ -29,7 +29,6 @@ const Cart = () => {
                     <button className="ButtonClean" onClick={()=>ClearItems()} >Limpiar carrito</button>    
                      {clicksNum ===1 ? <ShowOrder numOrder={idOrder} /> : <CartForm changes={handlerChange} submit={handlerSubmit}  name={buyer.name} tel={buyer.tel} email={buyer.email} emailRepeat={buyer.emailRepeat} numOrder={idOrder.value} /> }
             </div>
-            
         )
     }else{
         return(
