@@ -24,12 +24,12 @@ const Contact = () => {
                         <p>GitHub</p> 
                     </div> 
                 </a> 
-                <a href="https://www.linkedin.com/in/tomasvergara/">
+                <NavLink to="/contact/mail">
                     <div className="ContactItem" >
                         <FontAwesomeIcon icon={faEnvelope} />
-                        <p>hola</p> 
+                        <p>Gmail</p> 
                     </div> 
-                </a> 
+                </NavLink> 
             </div>
         </div>
         
