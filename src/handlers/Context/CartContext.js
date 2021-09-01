@@ -75,20 +75,26 @@ const CartContextProvider = ({children})=>{
             console.log(errors)
         }
     }
+    console.log(buyer.length)
 
     const handlerSubmit=(event)=>{
-        event.preventDefault()
-        validatesName()
-        validatesTel()
-        validatesRepeat()
-        if(errors.length===0){
-            const dbQuery = getFirestore()
-            dbQuery.collection('order').add(newOrder)
-            .then(response=>setIdOrder(response.id))
-            setClicksNum(clicksNum +1)
-        }else{
-            swal("Revisa", ` ${errors[0].Message}`, "warning")
-        }   
+        if( buyer.length === 0){
+            event.preventDefault()
+        }
+        else{
+            validatesName()
+            validatesTel()
+            validatesRepeat()
+            if(errors.length===0 ){
+                const dbQuery = getFirestore()
+                dbQuery.collection('order').add(newOrder)
+                .then(response=>setIdOrder(response.id))
+                setClicksNum(clicksNum +1)
+            }else{
+                swal("Revisa", ` ${errors[0].Message}`, "warning")
+            }
+        }
+           
     }
 
     const CleanOrder=()=>{
