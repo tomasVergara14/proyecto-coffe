@@ -2,12 +2,12 @@ import firebase from 'firebase'
 import 'firebase/firestore'
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAWdZEa0-gI-V8UQBc_nMNFWA7CKLseG0w",
-    authDomain: "proyecto-coffeshop.firebaseapp.com",
+    apiKey: process.env.REACT_APP_API_KEY,
+    authDomain: process.env.REACT_APP_AUTH_DOMAIN,
     projectId: "proyecto-coffeshop",
     storageBucket: "proyecto-coffeshop.appspot.com",
     messagingSenderId: "385980429856",
-    appId: "1:385980429856:web:191fed1d2238fc9ecf2e45"
+    appId: process.env.REACT_APP_APP_ID
   };
   // Initialize Firebase
   const app= firebase.initializeApp(firebaseConfig);
