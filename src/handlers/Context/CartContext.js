@@ -58,34 +58,33 @@ const CartContextProvider = ({children})=>{
     }
 
     const validatesName = ()=>{
-        if(buyer.name.length<3){
+        if(buyer.name ===undefined || buyer.name.length<3){
             errors.push({Message:"El nombre debe tener mas de 3 caracteres"})
             console.log(errors[0].Message)
         }
     }
-    const validatesTel = ()=>{
-        if(isNaN(buyer.tel) && buyer.tel.length <7 ){
+    const validatesTel = ()=>{ 
+         if( buyer.tel === undefined || (isNaN(buyer.tel) && buyer.tel.length <7) ){
             errors.push({Message:"El campo de telefono solo acepta numeros"})
             console.log(errors)
         }
     }
     const validatesRepeat = ()=>{
-        if(buyer.emailRepeat !== buyer.email){
+        if( (buyer.emailRepeat !== buyer.email)){
             errors.push({Message:"El mail no coincide"})
             console.log(errors)
         }
     }
-    console.log(buyer.length)
+    console.log(errors)
 
     const handlerSubmit=(event)=>{
-        if( buyer.length === 0){
+    
             event.preventDefault()
-        }
-        else{
+        
             validatesName()
             validatesTel()
             validatesRepeat()
-            if(errors.length===0 ){
+            if( !buyer.name && !buyer.tel && !buyer.email && errors.length===0 ){
                 const dbQuery = getFirestore()
                 dbQuery.collection('order').add(newOrder)
                 .then(response=>setIdOrder(response.id))
@@ -93,7 +92,7 @@ const CartContextProvider = ({children})=>{
             }else{
                 swal("Revisa", ` ${errors[0].Message}`, "warning")
             }
-        }
+        
            
     }
 
