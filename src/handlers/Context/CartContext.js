@@ -69,6 +69,12 @@ const CartContextProvider = ({children})=>{
             console.log(errors)
         }
     }
+    const validatesEmail = ()=>{
+        if(buyer.email ===undefined || buyer.name.length<3){
+            errors.push({Message:"El campo email debe tener mas de 3 caracteres"})
+            console.log(errors[0].Message)
+        }
+    }
     const validatesRepeat = ()=>{
         if( (buyer.emailRepeat !== buyer.email)){
             errors.push({Message:"El mail no coincide"})
@@ -83,6 +89,7 @@ const CartContextProvider = ({children})=>{
         
             validatesName()
             validatesTel()
+            validatesEmail()
             validatesRepeat()
             if( !buyer.name && !buyer.tel && !buyer.email && errors.length===0 ){
                 const dbQuery = getFirestore()
